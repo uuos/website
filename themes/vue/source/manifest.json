@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "The Progressive JavaScript Framework",
+  "description": "An Universal Smart Contract Platform",
   "display": "standalone",
   "icons": [
     {
@@ -41,8 +41,8 @@
     }
   ],
   "lang": "en-US",
-  "name": "Vue.js",
-  "short_name": "Vue",
+  "name": "UUOS",
+  "short_name": "UUOS",
   "start_url": "./menu",
   "theme_color": "#4fc08d"
 }
