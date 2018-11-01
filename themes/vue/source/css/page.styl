@@ -18,6 +18,10 @@
   box-shadow: 0 0 1px rgba(0,0,0,.25)
   transition: background-color .3s ease-in-out
 
+.dev
+  position: relative
+  padding: 2.2em 0 
+  margin: 0 auto 
 .content
   position: relative
   padding: 2.2em 0
@@ -261,3 +265,121 @@
       background-color: rgb(255,255,255)
       border: 2px solid #e8e8e8
       border-left: 4px solid $red
+
+.roadmap
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+
+
+.roadmap h2
+    font-family: NeuzeitGro-Bol,sans-serif;
+    color: #0a2140;
+    font-size: 45px;
+    font-weight: 600;
+    margin-left: 3%;
+    position: relative;
+    letter-spacing: 3px;
+
+.roadmap .line 
+    background: #87e300;
+    height: 2px;
+    width: 100%;
+    margin-top: 120px;
+
+
+p.date 
+    font-size: 18px;
+    color: #445569;
+    letter-spacing: -.53px;
+    font-weight: bold;
+    font-family: Arial;
+p 
+    margin: 0 0 10px;
+.square
+    width: 38px;
+    height: 38px;
+    background: #87e300;
+    transform: rotate(45deg);
+    margin-top: 42px;
+
+.step-txt
+    width: 92%;
+    margin-top: 30px;
+
+
+.txt-list
+    font-family: SofiaProRegular,sans-serif;
+    font-size: 16px;
+    color: #0a2140;
+    line-height: 25px;
+    margin: 16px 0;
+
+.txt-list
+  span
+    color: #23bf11;
+    font-weight: bold;
+
+
+.step-list1
+    width: 100%;
+    margin-top: 30px;
+
+.list1
+    margin-top: 200px
+
+
+.left
+    float: left;
+    width: 20%;
+    text-align: left;
+
+
+.square1
+    margin-top:0;
+    width: 30px;
+    height: 30px;
+
+
+.right
+    margin-top:0;
+    width: 75%;
+    float: left;
+
+.line1
+    background: #87e300;
+    width: 2px;
+    height:100%;
+    position: absolute;
+    left:30px;
+    margin-top: 200px;  
+
+.hidden-lg
+    display:none
+.col-lg-3
+      float:left
+      width: 25%
+.container 
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+@media screen and (max-width: 900px)  
+  .roadmap 
+    h2
+        font-size: 34px !important
+        top:30px
+    .list1
+        margin-top: 80px
+    
+    .line1
+        margin-top: 80px
+  .hidden-lg
+    display:block !important
+  .hidden-xs
+    display:none
+  
+    

@@ -1,5 +1,9 @@
 <% if (page.type) { %>
-  <%- partial('partials/sidebar', { type: page.type === 'menu' ? 'guide' : page.type, index: page.index }) %>
+  <% if (page.type === 'dev') { %>
+    
+  <% } else { %>
+    <%- partial('partials/sidebar', { type: page.type === 'menu' ? 'guide' : page.type, index: page.index }) %>
+  <% } %>
 <% } else { %>
   <div class="sidebar">
     <ul class="main-menu">
@@ -7,7 +11,7 @@
     </ul>
   </div>
 <% } %>
-<div class="content <%- page.type ? page.type + ' with-sidebar' : '' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
+<div class="<%- page.type === 'dev' ? 'dev' : 'content' %> <%- page.type ? page.type + ' with-sidebar' : '' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
   <% if (page.type) { %>
     <% if (page.type === 'menu') { %>
       <form id="search-form">
@@ -44,9 +48,5 @@
     <%_ if (!page.sponsors) { _%>
       <%- partial('partials/ad-text') %>
     <%_ } _%>
-    Caught a mistake or want to contribute to the documentation?
-    <a href="https://github.com/vuejs/vuejs.org/blob/master/src/<%- page.path.replace(/\.html$/, '.md') %>" target="_blank">
-      Edit this page on GitHub!
-    </a>
   </div>
 </div>
