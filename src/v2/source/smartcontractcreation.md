@@ -1,7 +1,7 @@
 ---
 title: Smart Contract Creation
 type: source
-order: 2
+order: 4
 ---
 
 # Creating Your First Python Smart Contract

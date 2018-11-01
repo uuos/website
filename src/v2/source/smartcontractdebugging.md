@@ -1,7 +1,7 @@
 ---
 title: Smart Contract Debugging
 type: source
-order: 2
+order: 5
 ---
 
 # Smart Contract Debugging
