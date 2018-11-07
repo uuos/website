@@ -1,5 +1,5 @@
 <% var isIndex = page.path === 'index.html' %>
-<% var isIndexen = page.path === 'index-en.html' %>
+<% var isIndexen = page.path === 'index_en.html' %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,8 +65,8 @@
     <!-- vimeo analytics -->
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
-  <body class="<%- isIndex ? '' : 'docs' -%>">
-    <div id="mobile-bar" <%- isIndex ? 'class="top"' : '' %>>
+  <body class="<%- (isIndex || isIndexen) ? '' : 'docs' -%>">
+    <div id="mobile-bar" <%- (isIndex || isIndexen) ? 'class="top"' : '' %>>
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
