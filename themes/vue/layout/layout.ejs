@@ -1,4 +1,5 @@
 <% var isIndex = page.path === 'index.html' %>
+<% var isIndexen = page.path === 'index-en.html' %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,8 +70,13 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <%- partial('partials/header') %>
-    <% if (!isIndex) { %>
+    <% if (page.type === 'indexen' || page.type === 'source_en' || page.type === 'deven') { %>
+      <%- partial('partials/header_en') %>
+      <% } else { %>
+        <%- partial('partials/header') %>
+      <% } %>
+    
+    <% if (!(isIndex || isIndexen)) { %>
       <div id="main" class="fix-sidebar">
         <% if (page.blog_index) { %>
           <%- partial('partials/blog') %>
@@ -82,7 +88,9 @@
     <% } else { %>
       <%- body %>
     <% } %>
-
+    <% if (isIndex || page.type === 'indexen' || page.type === 'dev' || page.type === 'deven') { %>
+      <%- partial('partials/footer') %>
+    <% } %>
     <!-- main custom script for sidebars, version selects etc. -->
     <script src="<%- url_for("/js/css.escape.js") %>"></script>
     <script src="<%- url_for("/js/common.js") %>"></script>

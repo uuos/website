@@ -1,0 +1,12 @@
+<li>
+    <a href="<%- url_for("/v2/source-en") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>">Document</a>
+  </li>
+  
+  <li>
+    <a href="<%- url_for("https://github.com/uuos/uuos/blob/master/whitepaper/ASelfEvolvingUniversalSmartContractPlatform_V1.1.pdf") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>">白皮书</a>
+  </li>
+  <li>
+    <a href="<%- url_for("/dev-route_en.html") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>">Roadmap</a>
+  </li>
+  <%- partial('partials/language_dropdown_en') %>
+  

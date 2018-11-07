@@ -1,37 +1,13 @@
-@import "_common"
-@import "_header"
-@import "_sidebar"
-@import "_sponsors-index"
-@import "_modal"
-
 $width = 900px
 $space = 40px
-
-body
-  background-color: darken($light, 10%)
-
-#logo
-  span
-    font-size: 1.2em
-  img
-    display: none
-
-.sidebar
-  display: none
-
-#mobile-bar
-  &.top
-    background-color: transparent
-    box-shadow: none
-    .logo
-      display: none
 
 #hero,
 #news
   padding: $space 40px 30px
   background-color: #fff
+  overflow: hidden
   .inner
-    max-width: $width * 1.4
+    max-width: 1260
     margin: 0 auto
   .left, .right
     display: inline-block
@@ -140,9 +116,10 @@ body
       color: $light
 
 #footer
-  padding: $space 0
+  padding: 80px 0
   color: #fff
   text-align: center
+  background: #727f80
   .social-icon
     margin 0 5px
     svg

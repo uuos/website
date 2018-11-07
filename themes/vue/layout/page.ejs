@@ -1,5 +1,5 @@
 <% if (page.type) { %>
-  <% if (page.type === 'dev') { %>
+  <% if (page.type === 'dev' || page.type === 'indexen' || page.type === 'deven') { %>
     
   <% } else { %>
     <%- partial('partials/sidebar', { type: page.type === 'menu' ? 'guide' : page.type, index: page.index }) %>
@@ -11,8 +11,11 @@
     </ul>
   </div>
 <% } %>
-<div class="<%- page.type === 'dev' ? 'dev' : 'content' %> <%- page.type ? page.type + ' with-sidebar' : '' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
+<div class="<%- (page.type === 'dev' || page.type === 'indexen' || page.type === 'deven') ? 'dev' : 'content' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
   <% if (page.type) { %>
+    <% if (page.type === 'indexen') { %>
+      <%- partial('partials/index-en') %>
+    <% } %>
     <% if (page.type === 'menu') { %>
       <form id="search-form">
         <input type="text" id="search-query-menu" class="search-query st-default-search-input">
@@ -44,9 +47,5 @@
       <% } %>
     </div>
   <% } %>
-  <div class="footer">
-    <%_ if (!page.sponsors) { _%>
-      <%- partial('partials/ad-text') %>
-    <%_ } _%>
-  </div>
+  
 </div>

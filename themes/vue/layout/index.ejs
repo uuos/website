@@ -7,8 +7,6 @@
 </div>
 
 <div id="hero">
-  <div class="banner">
-
     <div class="left">
     <img class="hero-logo" src="<%- url_for("/images/logo.png") %>" alt="uuos logo">
     </div><div class="right">
@@ -24,7 +22,6 @@
           GITHUB</a>
       </p>
     </div>
-  </div>
 </div>
 
 <div id="highlights">
@@ -53,28 +50,6 @@
     </div>
   </div>
 </div>
-
-
-<div id="footer">
-  <p>
-    <a class="social-icon" href="https://github.com/uuos/uuos" target="_blank">
-      <%- partial('icons/github1') %>
-    </a>
-    <a class="social-icon" href="https://t.me/uuosio" target="_blank">
-      <%- partial('icons/telegram1') %>
-    </a>
-    <a class="social-icon" href="https://twitter.com/uuosio" target="_blank">
-      <%- partial('icons/twitter1') %>
-    </a>
-    <a class="social-icon" href="https://www.youtube.com/channel/UCn2JYftmWF5lAvc9R-r_jyQ/featured" target="_blank">
-			<%- partial('icons/youtube1') %>    
-		</a>
-  </p>
-  <p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a><br>
-  Copyright &copy; 2014-<%- new Date().getFullYear() %> UUOS</p>
-</div>
-
-
 <script>
 (function () {
   var topScrolled = false
