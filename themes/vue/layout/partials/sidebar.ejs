@@ -1,7 +1,11 @@
 <div class="sidebar">
   <div class="sidebar-inner">
     <ul class="main-menu">
-      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+      <% if (page.type === 'indexen' || page.type === 'deven' || page.type === 'source_en') { %>
+        <%- partial('partials/main_menu_en', { context: 'sidebar' }) %>
+      <% } else { %>
+        <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+      <% } %>
     </ul>
     <div class="list">
       

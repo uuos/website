@@ -1,9 +1,5 @@
 <% if (page.type) { %>
-  <% if (page.type === 'dev' || page.type === 'indexen' || page.type === 'deven') { %>
-    
-  <% } else { %>
-    <%- partial('partials/sidebar', { type: page.type === 'menu' ? 'guide' : page.type, index: page.index }) %>
-  <% } %>
+  <%- partial('partials/sidebar', { type: page.type === 'menu' ? 'guide' : page.type, index: page.index }) %>
 <% } else { %>
   <div class="sidebar">
     <ul class="main-menu">

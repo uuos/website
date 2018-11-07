@@ -68,7 +68,11 @@
   <body class="<%- (isIndex || isIndexen) ? '' : 'docs' -%>">
     <div id="mobile-bar" <%- (isIndex || isIndexen) ? 'class="top"' : '' %>>
       <a class="menu-button"></a>
-      <a class="logo" href="/"></a>
+      <% if (page.type === 'indexen' || page.type === 'deven' || page.type === 'source_en') { %>
+        <a class="logo" href="/index_en.html"></a>
+      <% } else { %> 
+        <a class="logo" href="/"></a> 
+      <% } %>  
     </div>
     <% if (page.type === 'indexen' || page.type === 'source_en' || page.type === 'deven') { %>
       <%- partial('partials/header_en') %>

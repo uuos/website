@@ -364,10 +364,7 @@
         })
         .forEach(makeHeaderClickable)
 
-      smoothScroll.init({
-        speed: 400,
-        offset: 0
-      })
+      
     }
 
     var hoveredOverSidebar = false
