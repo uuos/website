@@ -1,11 +1,14 @@
-$header-height = 40px
+$m-width =1440px
 
 #header
-  background-color: #fff
+  max-width: $m-width
+  margin: 0 auto
   height: $header-height
-  padding: $heading-padding-vertical 60px
+  padding: 14px 100px
   position: relative
   z-index: 100
+  display: flex
+  font-size: 18px
 .header-en
   img
     display:none
@@ -21,11 +24,9 @@ body.docs
   list-style-type: none
   margin: 0
   padding: 0
-  position: absolute
-  right: 30px
-  top: $heading-padding-vertical
   height: $header-height
   line-height: $header-height
+  margin-left: auto
   .break
     display: none
   li
@@ -53,6 +54,7 @@ body.docs
 .nav-link
   padding-bottom: 3px
   white-space: nowrap
+  color: #fff
   &:hover, &.current
     border-bottom: 3px solid $green
   &.team
@@ -92,15 +94,15 @@ body.docs
 #logo
   display: inline-block
   font-size: 1.5em
-  line-height: $header-height
+  
   color: $dark
   font-family: $logo-font
   font-weight: 500
   img
     vertical-align: middle
     margin-right: 6px
-    width: $header-height
-    height: $header-height
+    width: 44px
+    height: 44px
 
 #mobile-bar
   position: fixed
