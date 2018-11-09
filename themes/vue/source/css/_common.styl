@@ -50,33 +50,35 @@ p
 
 a.button,
 input.button
-  padding: 0.75em 2em
+  padding: 0.75em 2.7em
   border-radius: 10px
   display: inline-block
-  color: #fff
-  background-color: lighten($green, 8%)
   transition: all .15s ease
   box-sizing: border-box
-  border: 1px solid lighten($green, 8%)
   &.why
     background: linear-gradient(to right, #03F1BE, #96F33D)
     position: relative
-  
+    color: #353535
+    
   &.has-icon
     position: relative
     text-indent: 1.4em;
-    > svg
+    > img
       position: absolute
-      left: 0.4em
-      top: 0.4em
+      left: 1em
+      top: 0.5em
       width: 2em
   &.start
     background-color: transparent
-    color: $green
+    color: #96F3A7
+    border: 2px solid #96F3A7
+    line-height: 22px
+      
+    
   &.git
     background: linear-gradient(to right, rgba(3,241,190,0.5), rgba(150,243,61,0.5)) 
-    
-
+    color: #fff
+    line-height: 25px
 .highlight
   overflow-x: auto
   background-color: $codebg
