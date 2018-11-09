@@ -1,11 +1,19 @@
+
 $width = 900px
 $space = 40px
 
+
+.indexs
+  background-color: #2A2A2A
+
 #hero,
 #news
-  padding: $space 40px 30px
+  
   background-color: #fff
-  overflow: hidden
+  background:url(/i mages/banner_1.jpg) no-repeat
+  overflow:hidden
+  background-size:cover
+  padding-bottom: 22%
   .inner
     max-width: $width * 1.4
     margin: 0 auto
@@ -13,7 +21,7 @@ $space = 40px
     display: inline-block
     vertical-align: top
   .left
-    width: 39%
+    width: 50%
   .right
     width: 61%
   .hero-logo
@@ -22,9 +30,12 @@ $space = 40px
     float: right
     margin-right: 60px
   h1
-    font-weight: 300
+    font-weight: bold
     margin: 0
-    font-size: 3.2em
+    font-size: 60px
+    background: linear-gradient(to right, #03F1BE, #96F33D);
+    -webkit-background-clip: text;
+    color: transparent;
   h2
     font-family: $logo-font
     font-weight: 500
@@ -47,6 +58,9 @@ $space = 40px
       display: inline-block
       vertical-align: middle
       margin-right: 15px
+  & p
+    display: flex
+    flex-wrap: wrap
 
 #news
   padding: $space 20px 70px
@@ -94,37 +108,52 @@ $space = 40px
     margin: 15px
 
 #highlights
-  background-color: #fff
+  background-color: #f2f2f2
   padding-bottom: 70px
   .inner
-    max-width: $width
+    max-width: $m-width
     margin: 0 auto
     text-align: center
+    
   .point
-    width: 33%
-    display: inline-block
+    width: 23.4%
     vertical-align: top
     box-sizing: border-box
-    padding: 0 2em
+    padding: 28px 2em
+    background: #fff
+    border-radius: 20px
     h2
-      color: $green
-      font-size: 1.5em
-      font-weight: 400
+      color: #333
+      font-size: 20px
+      font-weight: bold
       margin: 0
-      padding: .5em 0
+      padding: 30px 0
+      position: relative
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        bottom: 0
+        left: 43%
+        width: 14%
+        height: 4px
+        background: #999
     p
       color: $light
+    > img
+        width: 9em
+    
+
 
 #footer
-  padding: 80px 0
+  padding: $space 0
   color: #fff
   text-align: center
-  background: #727f80
   .social-icon
-    margin 0 5px
-    svg
-      width 18px
-      height 18px
+    margin 0 30px
+    img
+      width 44px
+      height 44 px
   a
     font-weight: 700
     color: #fff
@@ -155,6 +184,8 @@ $space = 40px
       display: block
     .button
       font-size: .9em
+    & p
+      justify-content: center
   #special-sponsor
     span
       display: block
@@ -169,3 +200,35 @@ $space = 40px
       &:before
         content: "—"
         color: $green
+      
+
+@media screen and (min-width: $m-width)
+  #hero    
+    background-color: #fff;
+    background: url(/images/banner_1.jpg) no-repeat;
+    overflow: hidden;
+    background-size: cover;
+    padding-bottom: 27%;
+  .banner    
+    top: 200px !important
+    padding: 0 100px
+
+.banner
+    max-width: 1440px
+    margin:0 auto
+    position: relative
+    top: 150px
+    padding: 0 100px
+
+
+@media screen and (max-width: $width)
+  .banner
+    top: 0
+    padding: 0
+
+@media screen and (min-width: $width)
+  #highlights
+    .inner
+      padding: 90px 100px 74px
+      display: flex
+      justify-content: space-between
