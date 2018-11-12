@@ -12,14 +12,7 @@
     <% if (page.type === 'indexcn') { %>
       <%- partial('partials/index-cn') %>
     <% } %>
-    <% if (page.type === 'menu') { %>
-      <form id="search-form">
-        <input type="text" id="search-query-menu" class="search-query st-default-search-input">
-      </form>
-      <%- partial('partials/toc', { type: 'guide' }) %>
-    <% } else { %>
-      <%- partial('partials/ad') %>
-    <% } %>
+    
   <% } %>
   <% if (page.title.trim()) { %>
     <h1><%- page.title %><%- page.type === 'examples' ? ' Example' : '' %></h1>
@@ -31,17 +24,6 @@
   <% } else { %>
     <%- page.content %>
   <% } %>
-  <% if (page.type === 'guide') { %>
-    <div class="guide-links">
-      <% const lastPage = site.pages.find({ type: page.type, order: { $lt: page.order }}).sort({ order: -1 }).first(); %>
-      <% if (lastPage) { %>
-        <span>← <a href="<%- url_for(lastPage.path) %>"><%- lastPage.title %></a></span>
-      <% } %>
-      <% const nextPage = site.pages.find({ type: page.type, order: { $gt: page.order }}).sort({ order: 1 }).first(); %>
-      <% if (nextPage) { %>
-        <span style="float: right;"><a href="<%- url_for(nextPage.path) %>"><%- nextPage.title %></a> →</span>
-      <% } %>
-    </div>
-  <% } %>
+  
   <div class="content fillcolor"></div>
 </div>
