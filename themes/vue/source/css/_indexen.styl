@@ -7,6 +7,8 @@ $space = 40px
   background-color: #2A2A2A
   &.sidebar
     display:none
+  .nav-link
+    color:#fff
 #logo
   span
     font-size: 1.2em
@@ -23,6 +25,7 @@ $space = 40px
   .inner
     max-width: $width * 1.4
     margin: 0 auto
+    
   .left, .right
     display: inline-block
     vertical-align: top
@@ -120,6 +123,7 @@ $space = 40px
     max-width: $m-width
     margin: 0 auto
     text-align: center
+    padding: 20px 0
     
   .point
     width: 23.4%
@@ -200,12 +204,10 @@ $space = 40px
   #highlights
     .point
       display: block
-      margin: 0 auto
+      margin: 20px auto
       width: 300px
       padding: 0 40px 30px
-      &:before
-        content: "—"
-        color: $green
+     
       
 
 @media screen and (min-width: $m-width)
@@ -231,6 +233,9 @@ $space = 40px
   .banner
     top: 0
     padding: 0
+  #footer 
+    .social-icon
+      margin: 0 10px
 
 @media screen and (min-width: $width)
   #highlights
