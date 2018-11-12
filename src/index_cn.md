@@ -1,5 +1,5 @@
 ---
 title: 
-type: indexen
+type: indexcn
 ---
 

@@ -7,10 +7,10 @@
     </ul>
   </div>
 <% } %>
-<div class="<%- (page.type === 'dev' || page.type === 'indexen' || page.type === 'deven') ? 'dev' : 'content' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
+<div class="<%- (page.type === 'dev' || page.type === 'indexcn' || page.type === 'deven') ? 'dev' : 'content' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
   <% if (page.type) { %>
-    <% if (page.type === 'indexen') { %>
-      <%- partial('partials/index-en') %>
+    <% if (page.type === 'indexcn') { %>
+      <%- partial('partials/index-cn') %>
     <% } %>
     <% if (page.type === 'menu') { %>
       <form id="search-form">

@@ -1,5 +1,5 @@
 <% var isIndex = page.path === 'index.html' %>
-<% var isIndexen = page.path === 'index_en.html' %>
+<% var isIndexcn = page.path === 'index_cn.html' %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,22 +65,22 @@
     <!-- vimeo analytics -->
     <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
   </head>
-  <body class="<%- (isIndex || isIndexen) ? 'indexs' : 'docs' -%>">
-    <div id="mobile-bar" <%- (isIndex || isIndexen) ? 'class="top"' : '' %>>
+  <body class="<%- (isIndex || isIndexcn) ? 'indexs' : 'docs' -%>">
+    <div id="mobile-bar" <%- (isIndex || isIndexcn) ? 'class="top"' : '' %>>
       <a class="menu-button"></a>
-      <% if (page.type === 'indexen' || page.type === 'deven' || page.type === 'source_en') { %>
-        <a class="logo" href="/index_en.html"></a>
+      <% if (page.type === 'indexcn' || page.type === 'deven' || page.type === 'source_en') { %>
+        <a class="logo" href="/index_cn.html"></a>
       <% } else { %> 
         <a class="logo" href="/"></a> 
       <% } %>  
     </div>
-    <% if (page.type === 'indexen' || page.type === 'source_en' || page.type === 'deven') { %>
+    <% if (page.type === 'indexcn' || page.type === 'source_en' || page.type === 'deven') { %>
       <%- partial('partials/header_en') %>
       <% } else { %>
         <%- partial('partials/header') %>
       <% } %>
     
-    <% if (!(isIndex || isIndexen)) { %>
+    <% if (!(isIndex || isIndexcn)) { %>
       <div id="main" class="fix-sidebar">
         <% if (page.blog_index) { %>
           <%- partial('partials/blog') %>
@@ -92,7 +92,7 @@
     <% } else { %>
       <%- body %>
     <% } %>
-    <% if (isIndex || page.type === 'indexen' || page.type === 'dev' || page.type === 'deven') { %>
+    <% if (isIndex || page.type === 'indexcn' || page.type === 'dev' || page.type === 'deven') { %>
       <%- partial('partials/footer') %>
     <% } %>
     <!-- main custom script for sidebars, version selects etc. -->
