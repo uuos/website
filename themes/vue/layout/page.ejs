@@ -7,10 +7,15 @@
     </ul>
   </div>
 <% } %>
-<div class="<%- (page.type === 'dev' || page.type === 'indexcn' || page.type === 'deven') ? 'dev' : 'content' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
+<div class="<%- (page.type === 'dev' || page.type === 'indexcn' || page.type === 'devcn') ? 'dev' : 'content' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
   <% if (page.type) { %>
     <% if (page.type === 'indexcn') { %>
       <%- partial('partials/index-cn') %>
+    <% } else if (page.type === 'dev') { %>
+      <%- partial('partials/roadmap') %>
+    
+    <% } else if (page.type === 'devcn') { %>
+      <%- partial('partials/roadmap_cn') %>
     <% } %>
     
   <% } %>

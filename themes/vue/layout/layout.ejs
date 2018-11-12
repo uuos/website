@@ -68,13 +68,13 @@
   <body class="<%- (isIndex || isIndexcn) ? 'indexs' : 'docs' -%>">
     <div id="mobile-bar" <%- (isIndex || isIndexcn) ? 'class="top"' : '' %>>
       <a class="menu-button"></a>
-      <% if (page.type === 'indexcn' || page.type === 'deven' || page.type === 'source_en') { %>
+      <% if (page.type === 'indexcn' || page.type === 'devcn' || page.type === 'source_en') { %>
         <a class="logo" href="/index_cn.html"></a>
       <% } else { %> 
         <a class="logo" href="/"></a> 
       <% } %>  
     </div>
-    <% if (page.type === 'indexcn' || page.type === 'source_en' || page.type === 'deven') { %>
+    <% if (page.type === 'indexcn' || page.type === 'source_en' || page.type === 'devcn') { %>
       <%- partial('partials/header_en') %>
       <% } else { %>
         <%- partial('partials/header') %>
@@ -92,7 +92,7 @@
     <% } else { %>
       <%- body %>
     <% } %>
-    <% if (isIndex || page.type === 'indexcn' || page.type === 'dev' || page.type === 'deven') { %>
+    <% if (isIndex || page.type === 'indexcn' || page.type === 'dev' || page.type === 'devcn') { %>
       <%- partial('partials/footer') %>
     <% } %>
     <!-- main custom script for sidebars, version selects etc. -->
