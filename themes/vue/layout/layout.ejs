@@ -80,7 +80,7 @@
         <%- partial('partials/header') %>
       <% } %>
     
-    <% if (!(isIndex || isIndexcn)) { %>
+    <% if (!(isIndex || isIndexcn || page.type === 'dev' || page.type === 'devcn')) { %>
       <div id="main" class="fix-sidebar">
         <% if (page.blog_index) { %>
           <%- partial('partials/blog') %>
@@ -92,7 +92,7 @@
     <% } else { %>
       <%- body %>
     <% } %>
-    <% if (isIndex || page.type === 'indexcn' || page.type === 'dev' || page.type === 'devcn') { %>
+    <% if (isIndex || isIndexcn || page.type === 'dev' || page.type === 'devcn') { %>
       <%- partial('partials/footer') %>
     <% } %>
     <!-- main custom script for sidebars, version selects etc. -->
