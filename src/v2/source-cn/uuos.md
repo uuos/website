@@ -86,8 +86,3 @@ Zen of Python(Python之禅)
 
 命名空间是一种绝妙的理念，我们应当多加利用（倡导与号召）
 
-
-
-参考链接：
-
-http://blog.csdn.net/gzlaiyonghao/article/details/2151918
