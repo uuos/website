@@ -50,7 +50,7 @@ psw
 ```
 'PW5JCWXaGkA15s6th6AWCabHewuGASAtrUJjTWoL1Ybx6sG9QzrSb'
 ```
-你现在可以看到你的钱包了。 mywallet后面的*表示钱包已解锁。
+你现在可以看到你的钱包了。mywallet后面的*表示钱包已解锁。
 
 ```
 wallet.list_wallets()
@@ -67,7 +67,7 @@ wallet.unlock('mywallet2','PW5JCWXaGkA15s6th6AWCabHewuGASAtrUJjTWoL1Ybx6sG9QzrSb
 ```
 
 #### wallet.import_key
-让我们导入inita的私钥。 请参阅[设置钱包和导入帐户密钥](https://github.com/learnforpractice/pyeos#setting-up-a-wallet-and-importing-account-key)获取更多信息.
+让我们导入inita的私钥。请参阅[设置钱包和导入帐户密钥](https://github.com/learnforpractice/pyeos#setting-up-a-wallet-and-importing-account-key)获取更多信息.
 
 ```
 wallet.import_key('mywallet2','5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3')
@@ -108,7 +108,7 @@ wallet.import_key('mywallet2','5JbDP55GXN7MLcNYKCnJtfKi9aD2HvHAdY7g8m67zFTAFkY1u
 ```
 
 #### eosapi.create_account
-现在创建账户, 你之前创建的 key1 和 key2 是公钥。
+现在创建账户，你之前创建的 key1 和 key2 是公钥。
 
 ```
 key1 = 'EOS61MgZLN7Frbc2J7giU7JdYjy2TqnfWFjZuLXvpHJoKzWAj7Nst'
