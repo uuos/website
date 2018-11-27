@@ -1,9 +1,14 @@
-<li>
+  <li>
     <a href="<%- url_for("/v2/source-cn") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>">文档</a>
   </li>
-  
   <li>
     <a href="<%- url_for("https://github.com/uuos/uuos/blob/master/whitepaper/AUniversalSmartContractPlatform_V1.3.pdf") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>">白皮书</a>
+  </li>
+  <li>
+    <a href="<%- url_for("http://uuos.network/") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>" target="_blank">测试网</a>
+  </li>
+  <li>
+    <a href="<%- url_for("/download.html") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>">下载</a>
   </li>
   <li>
     <a href="<%- url_for("/dev-route_cn.html") %>" class="nav-link team<%- page.path.match(/team\.html/) ? ' current' : '' %>">项目历程</a>
