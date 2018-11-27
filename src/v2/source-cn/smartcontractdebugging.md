@@ -1,34 +1,34 @@
 ---
-title: Smart Contract Debugging
+title: 智能合约调试
 type: source_en
 order: 4
 ---
 
-# Smart Contract Debugging
+# 智能合约调试
 
-Python smart contract support source level debugging. Developers can debug their smart contract in Eclipse IDE with pydevd Eclipse pluging, other IDE such as Visual Studio Code may also be supported, Please search for online resources to find out how to debug Python source remotely. for pydevd, there is a reference from here [manual_adv_remote_debugger](http://www.pydev.org/manual_adv_remote_debugger.html). After the environment has been successfully setting up, run the following command in UUOS console to enable debugging.
+Python智能合约支持源代码级调试。 开发人员可以使用pydevd Eclipse插件在Eclipse IDE中调试他们的智能合约，同时支持其他IDE，如Visual Studio Code，请搜索在线资源了解如何远程调试Python源代码。 对于pydevd，这里有一个参考[manual_adv_remote_debugger]（http://www.pydev.org/manual_adv_remote_debugger.html）。 环境设置成功后，在UUOS控制台中执行以下命令启用调试。
 
 ```
 debug.enable()
 ```
 
-Set breakpoint at your python smart contract source code in Eclipse. If your Python smart contract source code does not placed in UUOS/contracts directory, them you need to run the following code to specify your source code directory and your smart contract source code file must under directory with the same name.
+在Eclipse中，在python智能合约源代码中设置断点。 如果您的Python智能合约源代码没有放在UUOS / contracts目录中，则需要执行以下命令来指定源代码目录，并且智能合约源代码文件必须位于具有相同名称的目录下。
 
 ```
  sys.path.append(<folder where source code directory in>)
 ```
 
-Deploy your smart contract to the testnet, Use hello contract in UUOS/contracts as example, set breakpoint at hello.py, and run the following code to call hello.py
+将智能合约部署到testnet，以UUOS/contracts中的hello智能合约为例，在hello.py中设置断点，并执行以下命令来调用hello.py
 
 ```
 from hello import t
 t.test()
 ```
 
-Smart contract execution will be stopped when the code at the line of breakpoint is being executed.
+当执行到断点所在行的代码时，智能合约会停止继续运行。
 
 
-To disable debugging, run the following code.
+如果要禁用调试，请执行以下命令。
 
 ```
 debug.disable()

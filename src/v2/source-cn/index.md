@@ -1,17 +1,17 @@
 ---
-title: Index
+title: 索引
 type: source_en
 order: 1
 ---
 
 
-Welcome to UUOS's documentation!
+UUOS 文档
 =================================
 
 
-   [Building](building.html) 
-   [Smart Contract Creation](smartcontractcreation.html) 
-   [Smart Contract Debugging](smartcontractdebugging.html) 
-   [UUOS api](pyeosapi.html) 
+   [构建](building.html) 
+   [智能合约创建](smartcontractcreation.html) 
+   [智能合约调试](smartcontractdebugging.html) 
+   [UUOS api 接口](uuosapi.html) 
 
 

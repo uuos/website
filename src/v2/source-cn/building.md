@@ -1,12 +1,12 @@
 ---
-title: Building
+title: 构建
 type: source_en
 order: 2
 ---
 
-# Building UUOS
+# 构建UUOS
 
-## Downloading Source Code
+## 下载源代码
 
 ```bash
 git clone https://www.github.com/learnforpractice/pyeos
@@ -14,21 +14,21 @@ cd UUOS
 git submodule update --init --recursive
 ```
 
-## Installing dependencies (Ubuntu)
+## 安装依赖 (Ubuntu)
 
 ```
 sudo apt-get install libleveldb-dev
 sudo apt-get install libreadline-dev
 ```
 
-## Installing dependencies (macOS)
+## 安装依赖 (macOS)
 
 ```
 brew install leveldb
 brew install readline
 ```
 
-## Building
+## 构建
 
 ```bash
 ./eosio_build.sh

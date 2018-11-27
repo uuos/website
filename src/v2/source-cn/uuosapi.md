@@ -1,10 +1,10 @@
 ---
-title: UUOS api
+title: UUOS api 接口
 type: source_en
 order: 5
 ---
 
-# UUOS api overview
+# UUOS api 接口概述
 
 #### eosapi.get_info
 ```python
@@ -40,7 +40,7 @@ info.head_block_num
 
 #### wallet.create
 
-UUOS will create a testing wallet for you the first time you start it, but you can also create other wallet wit wallet.create API
+UUOS会在您第一次启动时为您创建一个测试钱包，但您也可以创建其他钱包 wit wallet.create API
 
 ```python
 psw = wallet.create('mywallet2')
@@ -50,7 +50,7 @@ psw
 ```
 'PW5JCWXaGkA15s6th6AWCabHewuGASAtrUJjTWoL1Ybx6sG9QzrSb'
 ```
-You can see you wallet now. The * behind mywallet means the wallet is unlocked.
+你现在可以看到你的钱包了。 mywallet后面的*表示钱包已解锁。
 
 ```
 wallet.list_wallets()
@@ -67,7 +67,7 @@ wallet.unlock('mywallet2','PW5JCWXaGkA15s6th6AWCabHewuGASAtrUJjTWoL1Ybx6sG9QzrSb
 ```
 
 #### wallet.import_key
-Let's import the private key of inita. Please refer to [Setting up a wallet and importing account key](https://github.com/learnforpractice/pyeos#setting-up-a-wallet-and-importing-account-key) for more information.
+让我们导入inita的私钥。 请参阅[设置钱包和导入帐户密钥](https://github.com/learnforpractice/pyeos#setting-up-a-wallet-and-importing-account-key)获取更多信息.
 
 ```
 wallet.import_key('mywallet2','5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3')
@@ -75,7 +75,7 @@ wallet.import_key('mywallet2','5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvF
 
 #### eosapi.create_key
 
-Create owner key
+创建 owner key
 
 ```python
 eosapi.create_key()
@@ -85,7 +85,7 @@ eosapi.create_key()
 {'public': 'EOS61MgZLN7Frbc2J7giU7JdYjy2TqnfWFjZuLXvpHJoKzWAj7Nst', 'private': '5JEcwbckBCdmji5j8ZoMHLEUS8TqQiqBG1DRx1X9DN124GUok9s'}
 ```
 
-Create active key
+创建 active key
 
 ```python
 eosapi.create_key()
@@ -95,20 +95,20 @@ eosapi.create_key()
 {'public': 'EOS5JuNfuZPATy8oPz9KMZV2asKf9m8fb2bSzftvhW55FKQFakzFL', 'private': '5JbDP55GXN7MLcNYKCnJtfKi9aD2HvHAdY7g8m67zFTAFkY1uBB'}
 ```
 
-Import owner key
+导入 owner key
 
 ```python
 wallet.import_key('mywallet2','5JEcwbckBCdmji5j8ZoMHLEUS8TqQiqBG1DRx1X9DN124GUok9s')
 ```
 
-Import active key
+导入 active key
 
 ```python
 wallet.import_key('mywallet2','5JbDP55GXN7MLcNYKCnJtfKi9aD2HvHAdY7g8m67zFTAFkY1uBB')
 ```
 
 #### eosapi.create_account
-It's time to create an account, key1 and key2 are the public key you created before.
+现在创建账户, 你之前创建的 key1 和 key2 是公钥。
 
 ```
 key1 = 'EOS61MgZLN7Frbc2J7giU7JdYjy2TqnfWFjZuLXvpHJoKzWAj7Nst'
@@ -212,7 +212,7 @@ eosapi.create_account('eosio', 'currency',key1,key2)
 ```
 #### eosapi.produce_block
 
-this command is used for generate a block when you are testing your smart contract.
+这个命令是用来你测试智能合约时生成区块的。
 
 ```
 eosapi.produce_block()
@@ -220,7 +220,7 @@ eosapi.produce_block()
 
 #### eosapi.get_transaction
 
-we can test get_transaction now, replace 'f6c43148dfac54105031fbaf966958d36309dd94e665c506eb2769e43febedba' with the transcation id in the create_account output, you will notice the output is the same as the output of create_account command above.
+我们现在可以测试get_transaction，用create_account命令输出的transcation id替换'f6c43148dfac54105031fbaf966958d36309dd94e665c506eb2769e43febedba'，您会注意到输出与上面create_account命令的输出相同。
 
 ```python
 r = eosapi.get_transaction('f6c43148dfac54105031fbaf966958d36309dd94e665c506eb2769e43febedba')
@@ -272,7 +272,7 @@ info
 ```
 
 #### eosapi.set_contract
-Publish python smart contract to the blockchain
+将Python智能合约发布到区块链
 
 ```python
 r = eosapi.set_contract('hello','../../programs/pyeos/contracts/hello/hello.py','../../contracts/hello/hello.abi',1)
