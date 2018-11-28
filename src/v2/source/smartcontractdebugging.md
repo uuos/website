@@ -12,7 +12,7 @@ Python smart contract support source level debugging. Developers can debug their
 debug.enable()
 ```
 
-Set breakpoint at your python smart contract source code in Eclipse. If your Python smart contract source code does not placed in UUOS/contracts directory, them you need to run the following code to specify your source code directory and your smart contract source code file must under directory with the same name.
+Set breakpoint at your python smart contract source code in Eclipse. If your Python smart contract source code does not placed in UUOS/contracts directory, then you need to run the following code to specify your source code directory and your smart contract source code file must under directory with the same name.
 
 ```
  sys.path.append(<folder where source code directory in>)
