@@ -212,7 +212,7 @@ eosapi.create_account('eosio', 'currency',key1,key2)
 ```
 #### eosapi.produce_block
 
-this command is used for generate a block when you are testing your smart contract.
+This command is used to generate a block when you are testing your smart contract.
 
 ```
 eosapi.produce_block()
@@ -220,7 +220,7 @@ eosapi.produce_block()
 
 #### eosapi.get_transaction
 
-we can test get_transaction now, replace 'f6c43148dfac54105031fbaf966958d36309dd94e665c506eb2769e43febedba' with the transcation id in the create_account output, you will notice the output is the same as the output of create_account command above.
+We can test get_transaction now, replace 'f6c43148dfac54105031fbaf966958d36309dd94e665c506eb2769e43febedba' with the transcation id in the create_account output, and you will notice the output is the same as the output of create_account command above.
 
 ```python
 r = eosapi.get_transaction('f6c43148dfac54105031fbaf966958d36309dd94e665c506eb2769e43febedba')

@@ -108,7 +108,7 @@ wallet.import_key('mywallet2','5JbDP55GXN7MLcNYKCnJtfKi9aD2HvHAdY7g8m67zFTAFkY1u
 ```
 
 #### eosapi.create_account
-现在创建账户，你之前创建的 key1 和 key2 是公钥。
+现在我们要来创建账户，你之前创建的 key1 和 key2 是公钥。
 
 ```
 key1 = 'EOS61MgZLN7Frbc2J7giU7JdYjy2TqnfWFjZuLXvpHJoKzWAj7Nst'
@@ -212,7 +212,7 @@ eosapi.create_account('eosio', 'currency',key1,key2)
 ```
 #### eosapi.produce_block
 
-这个命令是用来你测试智能合约时生成区块的。
+在你测试智能合约时,这个命令用来生成区块
 
 ```
 eosapi.produce_block()
