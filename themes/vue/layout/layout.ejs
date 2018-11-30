@@ -40,6 +40,7 @@
     <link href='//fonts.googleapis.com/css?family=Dosis:500&text=UUOS' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- main page styles -->
     <%- css(isIndex ? 'css/index' : 'css/page') %>
@@ -74,13 +75,13 @@
         <a class="logo" href="/"></a> 
       <% } %>  
     </div>
-    <% if (page.type === 'indexcn' || page.type === 'source_en' || page.type === 'devcn') { %>
+    <% if (page.type === 'indexcn' || page.type === 'source_en' || page.type === 'devcn' || page.type === 'downloadcn') { %>
       <%- partial('partials/header_en') %>
       <% } else { %>
         <%- partial('partials/header') %>
       <% } %>
     
-    <% if (!(isIndex || isIndexcn || page.type === 'dev' || page.type === 'devcn')) { %>
+    <% if (!(isIndex || isIndexcn || page.type === 'dev' || page.type === 'devcn' || page.type === 'downloadcn' || page.type === 'download')) { %>
       <div id="main" class="fix-sidebar">
         <% if (page.blog_index) { %>
           <%- partial('partials/blog') %>

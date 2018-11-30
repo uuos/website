@@ -9,7 +9,7 @@
     </ul>
   </div>
 <% } %>
-<div class="<%- (page.type === 'dev' || page.type === 'indexcn' || page.type === 'devcn') ? 'dev' : 'content' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
+<div class="<%- (page.type === 'dev' || page.type === 'indexcn' || page.type === 'devcn' || page.type === 'downloadcn' || page.type === 'download') ? 'dev' : 'content' %>">
   <% if (page.type) { %>
     <% if (page.type === 'indexcn') { %>
       <%- partial('partials/index-cn') %>
@@ -18,6 +18,11 @@
     
     <% } else if (page.type === 'devcn') { %>
       <%- partial('partials/roadmap_cn') %>
+
+    <% } else if (page.type === 'download') { %>
+      <%- partial('partials/download') %>
+    <% } else if (page.type === 'downloadcn') { %>
+      <%- partial('partials/download_cn') %>
     <% } %>
     
   <% } %>
