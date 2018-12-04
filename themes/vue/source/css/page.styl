@@ -200,6 +200,12 @@
     position: fixed
 
 
+@media screen and (max-width: 1600px)
+  #intro
+    .intro-content
+      padding-left: 15% !important
+      padding-top: 6% !important
+
 @media screen and (max-width: 1300px)
   .content.with-sidebar
     margin-left: 290px
@@ -211,6 +217,10 @@
     right: 0
     float: right
     padding: 0 0 20px 30px
+  #intro
+    .intro-content
+      padding-left: 13% !important
+      padding-top: 2% !important
 
 @media screen and (max-width: 900px)
   body
@@ -258,6 +268,10 @@
       margin-left: 0
   iframe
     margin: 0 !important
+  #intro
+    .intro-content
+      padding-left: 5% !important
+      padding-top: 20% !important
 
 @media print
   .footer
@@ -391,7 +405,7 @@ p
       display: flex
       padding: 44px 0 190px
       .download
-        padding-right: 40px 
+        padding-right: 45px 
         .dlbutton 
           background: #fff
           width: 200px
@@ -415,15 +429,20 @@ p
           color: #fff
           a
             color: #fff
-      .QRcode::after
-          background:rgba(0,0,0,0.2)
+      .QRcode
+        position:relative
+        z-index: 1
+        &::before
+          background:url(/images/circle.png) no-repeat
           content: ''
           background-size: 300px
           position:absolute;
-          left:200px;
+          left:-40px;
           width: 200px
           height: 200px
-          top:0
+          top:-40px
           border-radius: 200px
-        position:relative
+          z-index: -1
+          background-size: cover
+        
         
