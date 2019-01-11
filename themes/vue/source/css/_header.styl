@@ -3,14 +3,16 @@ $m-width =1440px
 #header
   margin: 0 auto
   height: $header-height
-  padding: 14px 100px
+  padding: 40px 100px 0
   position: relative
   z-index: 100
   display: flex
   font-size: 18px
-  background: #2a2a2a
+  background: rgba(200,200,200,0)
   a
-    color: #fff
+    color: #2575D8
+    font-size: 20px
+    font-weight: bold
 
 #nav
   list-style-type: none
@@ -48,7 +50,7 @@ $m-width =1440px
   white-space: nowrap
   
   &:hover, &.current
-    border-bottom: 3px solid $green
+    border-bottom: 3px solid $blue
   &.team
     margin-left: 10px
 
@@ -93,8 +95,8 @@ $m-width =1440px
   img
     vertical-align: middle
     margin-right: 6px
-    width: 44px
-    height: 44px
+    width: 64px
+    height: 64px
 
 #mobile-bar
   position: fixed
@@ -122,7 +124,14 @@ $m-width =1440px
     left: 50%
     margin-left: -15px
     background-size: 30px
+#text-logo
+  height:25px !important
+  width:75px !important
 
 @media print
   #header
     display: none
+
+@media screen and (max-width: 1200px)
+  #header
+    padding: 40px 0 0 !important

@@ -1,3 +1,4 @@
+<% var selfpage = (page.type === 'dev' || page.type === 'indexcn' || page.type === 'devcn' || page.type === 'downloadcn' || page.type === 'download' || page.type === 'downloadpc' || page.type === 'downloadpccn') %>
 <% if (page.type) { %>
   <% if (!(page.type === 'indexcn')) { %>
     <%- partial('partials/sidebar', { type: page.type === 'menu' ? 'guide' : page.type, index: page.index }) %>
@@ -9,7 +10,7 @@
     </ul>
   </div>
 <% } %>
-<div class="<%- (page.type === 'dev' || page.type === 'indexcn' || page.type === 'devcn' || page.type === 'downloadcn' || page.type === 'download') ? 'dev' : 'content' %>">
+<div class="<%- (selfpage) ? 'dev' : 'content' %>">
   <% if (page.type) { %>
     <% if (page.type === 'indexcn') { %>
       <%- partial('partials/index-cn') %>
@@ -23,6 +24,11 @@
       <%- partial('partials/download') %>
     <% } else if (page.type === 'downloadcn') { %>
       <%- partial('partials/download_cn') %>
+
+    <% } else if (page.type === 'downloadpc') { %>
+      <%- partial('partials/download_pc') %>
+    <% } else if (page.type === 'downloadpccn') { %>
+      <%- partial('partials/download_pc_cn') %>
     <% } %>
     
   <% } %>

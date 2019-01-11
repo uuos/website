@@ -17,13 +17,15 @@
 @import "_roadmap"
 
 #header
-  box-shadow: 0 0 1px rgba(0,0,0,.25)
+  //box-shadow: 0 0 1px rgba(0,0,0,.25)
   transition: background-color .3s ease-in-out
 .header-en
   box-shadow:none !important
 .dev
-  position: relative
-  margin: 0 auto 
+  position: absolute
+  width: 100%;
+  top: 0px;
+  background: #D5EAF9;
   .content
     display:none
 .content
@@ -199,13 +201,10 @@
   .sidebar
     position: fixed
 
-
-@media screen and (max-width: 1600px)
-  #intro
+@media screen and (max-width: 1700px)
+  #intro 
     .intro-content
-      padding-left: 15% !important
-      padding-top: 6% !important
-
+      padding: 10% 0 0 !important
 @media screen and (max-width: 1300px)
   .content.with-sidebar
     margin-left: 290px
@@ -217,10 +216,17 @@
     right: 0
     float: right
     padding: 0 0 20px 30px
+  #intro .intro-content .intro-content-l img
+    width: 450px !important
+
+@media screen and (max-width: 1170px)
+  .hidden-xs
+    display:none
   #intro
-    .intro-content
-      padding-left: 13% !important
-      padding-top: 2% !important
+    background-image:url('') !important
+    .intro-content 
+      .intro-content-r
+        padding: 0 100px !important
 
 @media screen and (max-width: 900px)
   body
@@ -231,9 +237,16 @@
   #logo
     display: none
   .nav-link
+    position:relative
     padding-bottom: 1px
-    &:hover, &.current
-      border-bottom: 2px solid $green
+    &:hover::after, &.current      
+      content: ""
+      width: 5px
+      height: 5px
+      background: $blue
+      position: absolute
+      top: 100%
+      left: 50%
   #mobile-bar
     display: block
   #mobile-bar.top
@@ -258,6 +271,8 @@
   .footer
     margin-left: 0
     text-align: center
+  #intro .intro-content .intro-content-r .title-text
+    width: 100% !important
 
 @media screen and (max-width: 560px)
   #downloads
@@ -269,9 +284,11 @@
   iframe
     margin: 0 !important
   #intro
-    .intro-content
-      padding-left: 5% !important
-      padding-top: 20% !important
+    background-image:''
+    .intro-content .intro-content-r 
+      padding: 20px !important
+    .intro-content-b .switch-download
+      margin-left: 0 !important
 
 @media print
   .footer
@@ -385,66 +402,123 @@ p
         margin-top: 80px
   .hidden-lg
     display:block !important
-  .hidden-xs
-    display:none
+  
+#text-logo
+  height:25px !important
+  width:75px !important   
   
 #intro
-  background-image: url(../images/banner_download.png)
-  background-size: cover
+  background-image: url(../images/background.png)
+  background-size: 85%
+  background-repeat: no-repeat
   width: 100%
   .intro-content
-    padding-left: 20%;
-    padding-top: 10%;
+    display:flex
+    padding-left: 1px
     box-sizing:border-box
-    h1
-      color: #fff
-      font-size: 56px
-      margin: 56px 0 40px
-    
-    .item-2
+    padding: 8% 100px 0
+    justify-content: space-between
+    align-items: center
+    width:100%
+    .intro-content-l
+      width: 45%
+      margin-right: 50px
+      img
+        width: 650px
+    .imgsize
+      img
+        width:100%
+    .intro-content-r
+      padding: 0 40px
       display: flex
-      padding: 5px 0 200px
-      .download
-        padding-right: 45px 
-        .dlbutton 
-          background: #fff
-          width: 200px
-          height: 35px
-          border-radius: 10px
-          margin-bottom: 16px
-          color: #3B8EF3
-          display: flex
-          justify-content: left
-          align-items: center
-          font-size: 15px
-          a
-            color: #3B8EF3
-          .fa
-            height: 25px
-            padding-left: 20px
-            padding-right: 15px
-            font-size: 25px
-        :hover
-          background: #3B8EF3
-          color: #fff
-          a
-            color: #fff
-      .QRcode
+      align-items: flex-start
+      flex-direction: column
+      .item-1
+        display:flex
+        img
+          width:131px
+      .title-text
+        color: #5C5C5C
+        font-size: 48px
+        width:435px
+        margin: 30px 15px 0 40px
         position:relative
-        z-index: 1
-        margin-top: 40px
-        margin-left: 40px
+        font-weight: bold
         &::before
-          background:url(/images/circle.png) no-repeat
-          content: ''
-          background-size: 300px
+          content: 'UUOS Wallet'
           position:absolute;
-          left:-40px;
-          width: 200px
-          height: 200px
-          top:-40px
-          border-radius: 200px
-          z-index: -1
-          background-size: cover
-        
-        
+          font-size: 72px
+          top: -24px
+          height: 70px
+          color:rgba(92,92,92,0.1)
+      .item-2
+        display: flex
+        margin: 90px 0
+        background: rgba(255,255,255,0.3)
+        border-radius: 30px
+        padding: 40px
+        flex-wrap: wrap
+        .text-scan
+          margin: 15px auto
+          text-align: center
+          font-size: 16px
+        .download
+          .dlbutton 
+            background: #fff
+            width: 226px
+            height: 58px
+            border-radius: 28px
+            color: #3B8EF3
+            display: flex
+            justify-content: left
+            align-items: center
+            font-size: 18px
+            box-shadow: 1px 1px 24px 5px rgba(0,72,255,0.23)
+            a
+              color: #3B8EF3
+            .fa
+              height: 30px
+              padding-left: 20px
+              padding-right: 15px
+              font-size: 30px
+          :hover
+            background: #3B8EF3
+            color: #fff
+            a
+              color: #fff
+        #ios
+          margin: 5px 0 32px
+        #windows
+          margin: 5px 0 32px
+        #mac
+          margin: 5px 0 32px
+        .QRcode
+          position:relative
+          z-index: 1
+          margin-right: 48px
+          img
+            width:150px
+  .intro-content-b
+    display:flex
+    justify-content:center
+    margin-bottom: 40px
+    flex-wrap: wrap
+    .switch-download
+      width:275px
+      height:58px
+      box-shadow:1px 1px 24px 5px rgba(0,72,255,0.23)
+      border-radius:10px
+      font-size:24px
+      margin-left:69px
+      margin-bottom:20px
+      background: #fff
+      text-align: center
+      line-height: 58px
+      color:#3B8EF3
+      .fas
+        padding-right: 10px
+        font-sise: 27px
+    .button-blue
+      background:#3B8EF3
+      color:#fff
+          

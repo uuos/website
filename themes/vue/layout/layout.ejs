@@ -1,5 +1,6 @@
 <% var isIndex = page.path === 'index.html' %>
 <% var isIndexcn = page.path === 'index_cn.html' %>
+<% var selfpagecn = (page.type === 'indexcn' || page.type === 'source_en' || page.type === 'devcn' || page.type === 'downloadcn' || page.type === 'downloadpccn') %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +41,7 @@
     <link href='//fonts.googleapis.com/css?family=Dosis:500&text=UUOS' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- main page styles -->
@@ -75,19 +77,15 @@
         <a class="logo" href="/"></a> 
       <% } %>  
     </div>
-    <% if (page.type === 'indexcn' || page.type === 'source_en' || page.type === 'devcn' || page.type === 'downloadcn') { %>
+    <% if (selfpagecn) { %>
       <%- partial('partials/header_en') %>
       <% } else { %>
         <%- partial('partials/header') %>
       <% } %>
     
-    <% if (!(isIndex || isIndexcn || page.type === 'dev' || page.type === 'devcn' || page.type === 'downloadcn' || page.type === 'download')) { %>
+    <% if (page.type === 'source') { %>
       <div id="main" class="fix-sidebar">
-        <% if (page.blog_index) { %>
-          <%- partial('partials/blog') %>
-        <% } else { %>
-          <%- body %>
-        <% } %>
+        <%- body %>
       </div>
       <script src="<%- url_for("/js/smooth-scroll.min.js") %>"></script>
     <% } else { %>
