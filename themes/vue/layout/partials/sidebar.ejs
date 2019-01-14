@@ -2,7 +2,7 @@
   <div class="sidebar-inner">
     <ul class="main-menu">
       <% if (page.type === 'indexcn' || page.type === 'devcn' || page.type === 'source_en') { %>
-        <%- partial('partials/main_menu_en', { context: 'sidebar' }) %>
+        <%- partial('partials/main_menu_cn', { context: 'sidebar' }) %>
       <% } else { %>
         <%- partial('partials/main_menu', { context: 'sidebar' }) %>
       <% } %>
