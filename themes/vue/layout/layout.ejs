@@ -71,7 +71,7 @@
   <body class="<%- (isIndex || isIndexcn) ? 'indexs' : 'docs' -%>">
     <div id="mobile-bar" <%- (isIndex || isIndexcn) ? 'class="top"' : '' %>>
       <a class="menu-button"></a>
-      <% if (page.type === 'indexcn' || page.type === 'devcn' || page.type === 'source_en') { %>
+      <% if (selfpagecn) { %>
         <a class="logo" href="/index_cn.html"></a>
       <% } else { %> 
         <a class="logo" href="/"></a> 

@@ -1,7 +1,9 @@
+<% var selfpagecn = (page.type === 'indexcn' || page.type === 'source_en' || page.type === 'devcn' || page.type === 'downloadcn' || page.type === 'downloadpccn') %>
+
 <div class="sidebar">
   <div class="sidebar-inner">
     <ul class="main-menu">
-      <% if (page.type === 'indexcn' || page.type === 'devcn' || page.type === 'source_en') { %>
+      <% if (selfpagecn) { %>
         <%- partial('partials/main_menu_cn', { context: 'sidebar' }) %>
       <% } else { %>
         <%- partial('partials/main_menu', { context: 'sidebar' }) %>
