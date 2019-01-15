@@ -8,22 +8,20 @@
 
 <div id="hero">
   <div class="banner">
-    <div class="left">
-        <h2 class="vue">UUOS</h2>
-        <h1>
-        <br>A Universal Smart Contract Platform
-        </h1>
+    <div class="i-left">
+        <div class="text-top">A Universal</div>
+        <div class="text-bottom">Smart Contract Platform</div>
         <br>
           <p>
             <a class="button why" href="<%- url_for("/v2/source/uuos.html") %>" target="_blank">Why UUOS?</a>
-            <a class="button start" href="<%- url_for("/v2/source") %>" target="_blank"><span>Start</span></a>
+            <a class="button start" href="<%- url_for("/v2/source") %>" target="_blank">Start</a>
             <a class="button git has-icon" href="https://github.com/uuos/uuos" target="_blank">
-              <%- partial('icons/github-dark') %>
+              <i class="fa fa-github fa-4x"></i>
               GITHUB</a>
           </p>
     </div>
-    <div class="right">
-    
+    <div class="i-right">
+      <img src="<%- url_for("/images/chahua.png") %>">
     </div>
   </div>
 </div>
@@ -31,26 +29,26 @@
 <div id="highlights">
   <div class="inner">
     <div class="point">
-        <img src="<%- url_for("/images/web_Home page_kuozhan.png") %>">
+        <img src="<%- url_for("/images/icon_GoodExtensibility.png") %>">
       <h2>Good Extensibility</h2>
       <p align="left">UUOS has good extensibility. It supports a variety of smart contract VMs. At present, it not only supports wasm VM but also VMs such as Python, EVM, Lua, and Java. It is very convenient to integrate a new kind of VM.</p>
     </div>
 
     <div class="point">
-        <img src="<%- url_for("/images/web_Home page_yiyong.png") %>">
+        <img src="<%- url_for("/images/icon_DeveloperFriendly.png") %>">
       <h2>Developer Friendly</h2>
       <p align="left">UUOS focuses on the application of Python language to the  smart contract development, improving usability of smart contract languages. At the same time, UUOS pays attention to the security of smart contract.</p>
     </div>
 
     <div class="point">
-      <img src="<%- url_for("/images/web_Home page_tiaoshi.png") %>">
+      <img src="<%- url_for("/images/icon_On-lineDebugging.png") %>">
       <h2>On-line Debugging</h2>
       <p>
         <p align="left">UUOS supports direct on-line debugging of C++, Python and other smart contract language through development tools such as Visual Studio Code to make development of smart contract easier.</p>
       </p>
     </div>
     <div class="point">
-      <img src="<%- url_for("/images/web_Home page_shengji.png") %>">
+      <img src="<%- url_for("/images/icon_UpgradeonTheChain.png") %>">
       <h2>Upgrade on The Chain</h2>
       <p>
         <p align="left">UUOS can upgrade VM modules and other modules of blockchain without stopping the node.</p>

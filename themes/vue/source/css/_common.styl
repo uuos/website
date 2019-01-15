@@ -49,39 +49,16 @@ p
 
 a.button,
 input.button
-  padding: 0.75em 2.7em
-  border-radius: 10px
   display: inline-block
   transition: all .15s ease
-  box-sizing: border-box
-  &.why
-    background: linear-gradient(to right, #03F1BE, #96F33D)
-    position: relative
-    color: #353535
-    
+  box-sizing: border-box    
   &.has-icon
     position: relative
-    text-indent: 1.4em;
     > img
       position: absolute
       left: 1em
       top: 0.5em
       width: 2em
-  &.start
-    background-color: transparent
-    color: #96F3A7
-    border: 2px solid #96F3A7
-    line-height: 22px
-    
-    span
-      background: linear-gradient(to right, #03F1BE, #96F33D)
-      -webkit-background-clip: text
-      color: transparent
-    
-  &.git
-    background: linear-gradient(to right, rgba(3,241,190,0.5), rgba(150,243,61,0.5)) 
-    color: #fff
-    line-height: 25px
 .highlight
   overflow-x: auto
   background-color: $codebg

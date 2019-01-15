@@ -9,7 +9,7 @@ $space = 40px
 
 
 body
-  background-color: #2A2A2A
+  background-color: $lightblue
 .indexs
   a
     color:#fff
@@ -30,35 +30,41 @@ body
 
 #hero,
 #news
-  
-  background-color: #fff
-  background:url(/images/banner_1.jpg) no-repeat
   overflow:hidden
-  background-size:cover
+  background-image: url(../images/home_banner.png)
+  background-repeat: no-repeat
+  background-position-y: bottom
+  background-size: 100%
   padding-bottom: 22%
   .inner
     max-width: $width * 1.4
     margin: 0 auto
-    
-  .left, .right
-    display: inline-block
+  .banner
+    position: relative
+    top: 100px
+    display:flex
+    justify-content:flex-end
+    .i-right
+      img
+        width: 906px  
+  .i-left, .i-right
     vertical-align: top
-  .left
-    width: 50%
-  .right
-    width: 61%
+  .i-left
+    margin-right:50px
+    margin-top: 50px
   .hero-logo
     width: 215px
     height: 215px
     float: right
     margin-right: 60px
-  h1
+  .text-top
     font-weight: bold
-    margin: 0
-    font-size: 60px
-    background: linear-gradient(to right, #03F1BE, #96F33D);
-    -webkit-background-clip: text;
-    color: transparent;
+    font-size: 5.56em
+    color: #585858
+  .text-bottom
+    font-size: 4.43em
+    color: #787878
+    margin-bottom: 30px
   h2
     font-family: $logo-font
     font-weight: 500
@@ -66,14 +72,28 @@ body
     margin: 0 0 10px
     display: none
   .button
+    border:2px solid #2575D8
+    border-radius: 34px
+    color: #2575D8
     margin: 1em 0
-    font-size: 1.05em
-    font-weight: 600
-    letter-spacing: .1em
-    min-width: 8em
+    padding: 0.75em 1em
+    font-size: 1.375em
+    font-weight: bold
+    min-width: 5em
     text-align: center
+    &:hover
+      background: #2575D8
+      box-shadow:11px 17px 24px 5px rgba(0,72,255,0.23)
+      color:#FFFFFF
     &:not(:last-child)
-      margin-right: 1%
+      margin-right: 2%
+    .fa
+      font-size: 40px
+      position: absolute
+      left: 9px
+      top: 12px
+  .git
+    min-width: 8em
   .social-buttons
     list-style-type: none
     padding: 0
@@ -84,37 +104,6 @@ body
   & p
     display: flex
     flex-wrap: wrap
-
-#news
-  padding: $space 20px 70px
-  text-align: center
-  p
-    margin-top: 10px
-  a
-    color: $green
-  .newsletter-form
-    position: relative
-    max-width: 550px
-    margin: 0 auto
-    box-sizing: border-box
-  .newsletter-input
-    width: 100%
-    box-sizing: border-box
-    padding: 10px 80px 10px 20px
-    height: 50px
-    border-radius: 50px
-    border: 1px solid #ccc
-    font-size: 16px
-    &:focus
-      outline: none
-      border-color: #42b983
-  .newsletter-button.button
-    position: absolute
-    padding: 4px 20px
-    margin: 0
-    height: calc(100% - 8px)
-    right: 4px
-    top: 4px
 
 #special-sponsor
   background-color: #fff
@@ -131,21 +120,22 @@ body
     margin: 15px
 
 #highlights
-  background-color: #f2f2f2
   padding-bottom: 70px
   .inner
     max-width: $m-width
-    margin: 0 auto
+    padding: 90px 300px 74px
     text-align: center
-    padding: 20px 0
     
   .point
-    width: 23.4%
+    width: 24%
     vertical-align: top
     box-sizing: border-box
     padding: 28px 2em
-    background: #fff
     border-radius: 20px
+    &:hover
+      box-shadow:0px 0px 40px 0px rgba(15,100,202,0.1)
+      border-radius:20px
+      background:#FFFFFF
     h2
       color: #333
       font-size: 20px
@@ -160,12 +150,13 @@ body
         bottom: 0
         left: 43%
         width: 14%
-        height: 4px
-        background: #999
+        height: 2px
+        background: #333
     p
       color: $light
+      font-size: 1.16em
     > img
-        width: 9em
+        width: 10.5em
     
 
 
@@ -173,11 +164,14 @@ body
   padding: $space 0
   color: #fff
   text-align: center
+  background-image: url(../images/home_bottom.png)
+  background-repeat: no-repeat
+  background-size: 100%
   .social-icon
     margin 0 30px
     img
-      width 44px
-      height 44 px
+      width 4.375em
+      height 4.375em
   a
     font-weight: 700
     color: #fff
@@ -188,18 +182,26 @@ body
     font-size: 14px
   .sidebar
     display: block
+  .banner
+    top: 0 !important
+    .i-right
+      display: none
+    .text-top
+      font-size: 4em !important
+    .text-bottom
+      font-size: 3em !important
   #header
     display: none
   #mobile-bar
     display: block
   #hero
-    padding: $space 40px 30px
+    padding: $space 0
     .hero-logo
       float: none
       margin: 30px 0 15px
       width: 140px
       height: 140px
-    .left, .right
+    .i-left, .i-right
       text-align: center
       width: 100%
     h1
@@ -207,9 +209,13 @@ body
     h2
       display: block
     .button
-      font-size: .9em
+      font-size: .9em     
     & p
       justify-content: center
+    .button
+      .fa
+        font-size: 16px;
+        line-height: 6px;
   #special-sponsor
     span
       display: block
@@ -224,25 +230,15 @@ body
      
       
 
-@media screen and (min-width: $m-width)
-  #hero    
-    background-color: #fff;
-    background: url(/images/banner_1.jpg) no-repeat;
-    overflow: hidden;
-    background-size: cover;
-    padding-bottom: 26%;
-  .banner    
-    top: 200px !important
-    padding: 0 100px
-    
-
-.banner
-    max-width: 1440px
-    margin:0 auto
-    position: relative
-    top: 150px
-    padding: 0 100px
-
+@media screen and (max-width: $m-width)
+  body
+    font-size:14px
+  #hero .i-left
+    margin-left: 50px
+  #highlights
+    .inner
+      padding: 90px 200px 74px
+  
 
 @media screen and (max-width: $width)
   .banner
@@ -250,13 +246,39 @@ body
     padding: 0
     h2
       color: #fff
-  #footer 
+  #footer
+    padding: 20px 0
+    background-size: auto 100%
+    background-position: center
     .social-icon
       margin: 0 10px
+  #highlights 
+    .inner
+      padding: 90px 0
 
 @media screen and (min-width: $width)
   #highlights
     .inner
-      padding: 90px 100px 74px
       display: flex
       justify-content: space-between
+      margin-top: 100px
+
+@media screen and (max-width: 1750px)
+  .banner
+    .i-right
+      img
+        width: 706px !important
+@media screen and (max-width: 1550px)
+  .banner
+    .i-right
+      img
+        width: 606px !important
+  #hero .button .fa
+    font-size: 1.5em
+  #footer
+    padding: 15px 0
+
+@media screen and (max-width: 1200px)
+  .banner .i-right img
+    width: 506px !important
+  

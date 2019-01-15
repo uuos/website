@@ -8,22 +8,20 @@
   
   <div id="hero">
     <div class="banner">
-      <div class="left">
-          <h2 class="vue">UUOS</h2>
-          <h1>
-          <br>一个通用智能合约平台
-          </h1>
+      <div class="i-left">
+        <div class="text-top">一个通用</div>
+        <div class="text-bottom">智能合约平台</div>
           <br>
             <p>
               <a class="button why" href="<%- url_for("/v2/source-cn/uuos.html") %>" target="_blank">为什么是UUOS?</a>
-              <a class="button start" href="<%- url_for("/v2/source-cn") %>" target="_blank"><span>开始</span></a>
+              <a class="button start" href="<%- url_for("/v2/source-cn") %>" target="_blank">开始</a>
               <a class="button git has-icon" href="https://github.com/uuos/uuos" target="_blank">
-                <%- partial('icons/github-dark') %>
+                <i class="fa fa-github fa-4x"></i>
                 GITHUB</a>
             </p>
       </div>
-      <div class="right">
-      
+      <div class="i-right">
+        <img src="<%- url_for("/images/chahua.png") %>">
       </div>
     </div>
   </div>
@@ -31,7 +29,7 @@
   <div id="highlights">
     <div class="inner">
       <div class="point">
-          <img src="<%- url_for("/images/web_Home page_kuozhan.png") %>">
+          <img src="<%- url_for("/images/icon_GoodExtensibility.png") %>">
         <h2>可扩展性</h2>
         <p>
           <p align="left">UUOS有着良好的扩展性，支持多种智能合约虚拟机，目前除了支持wasm虚拟机，还支持Python, EVM, Lua，Java等虚拟机，集成一种新的虚拟机非常方便.</p>
@@ -39,7 +37,7 @@
       </div>
   
       <div class="point">
-          <img src="<%- url_for("/images/web_Home page_yiyong.png") %>">
+          <img src="<%- url_for("/images/icon_DeveloperFriendly.png") %>">
         <h2>对开发者友好</h2>
         <p>
           <p align="left">UUOS专注于将Python语言应用于智能合约的开发，提高智能合约语言的易用性，同时注重智能合约的安全性.</p>
@@ -47,14 +45,14 @@
       </div>
   
       <div class="point">
-        <img src="<%- url_for("/images/web_Home page_tiaoshi.png") %>">
+        <img src="<%- url_for("/images/icon_On-lineDebugging.png") %>">
         <h2>在线调试</h2>
         <p>
           <p align="left">UUOS支持通过Visual Studio Code等开发工具直接调试C++和Python等智能合约，方便智能合约的开发.</p>
         </p>
       </div>
       <div class="point">
-        <img src="<%- url_for("/images/web_Home page_shengji.png") %>">
+        <img src="<%- url_for("/images/icon_UpgradeonTheChain.png") %>">
         <h2>链上升级</h2>
         <p>
           <p align="left">UUOS可以做到在不停止结点的情况下升级区块链的VM等模块.</p>
