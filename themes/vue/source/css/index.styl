@@ -59,10 +59,10 @@ body
     margin-right: 60px
   .text-top
     font-weight: bold
-    font-size: 5.56em
+    font-size: 5.3em
     color: #585858
   .text-bottom
-    font-size: 4.43em
+    font-size: 4.2em
     color: #787878
     margin-bottom: 30px
   h2
@@ -184,6 +184,8 @@ body
     display: block
   .banner
     top: 0 !important
+    .i-left
+      margin-left: 50px !important
     .i-right
       display: none
     .text-top
@@ -233,8 +235,12 @@ body
 @media screen and (max-width: $m-width)
   body
     font-size:14px
+    .banner
+      .i-right
+        img
+          width: 620px !important
   #hero .i-left
-    margin-left: 50px
+    margin-left: 100px
   #highlights
     .inner
       padding: 90px 200px 74px
@@ -263,16 +269,11 @@ body
       justify-content: space-between
       margin-top: 100px
 
-@media screen and (max-width: 1750px)
+@media screen and (max-width: 1680px)
   .banner
     .i-right
       img
-        width: 706px !important
-@media screen and (max-width: 1550px)
-  .banner
-    .i-right
-      img
-        width: 606px !important
+        width: 780px !important
   #hero .button .fa
     font-size: 1.5em
   #footer
@@ -281,4 +282,8 @@ body
 @media screen and (max-width: 1200px)
   .banner .i-right img
     width: 506px !important
+
+@media screen and (min-width: 2000px)
+  #hero .i-left
+    min-width: 950px
   

@@ -8,7 +8,7 @@ body
 .indexs
   background-color: $lightblue
   .i-left
-    margin-left: 100px
+    margin-left: 150px
     width: 100%
   .fillcolor
     background:#f2f2f2
@@ -64,10 +64,10 @@ body
     margin-right: 60px
   .text-top
     font-weight: bold
-    font-size: 5.56em
+    font-size: 5.3em
     color: #585858
   .text-bottom
-    font-size: 4.43em
+    font-size: 4.2em
     color: #787878
     margin-bottom: 30px
   h2
@@ -206,8 +206,11 @@ body
       margin: 30px 0 15px
       width: 140px
       height: 140px
-    .i-left, .i-right
+    .i-left
       text-align: center
+      width: 100%
+      margin-left: 50px !important
+    .i-right
       width: 100%
     h1
       font-size: 2em
@@ -237,8 +240,15 @@ body
 
 @media screen and (max-width: $m-width)
 
+  body
+    -webkit-text-size-adjust: none
+    font-size: 14px
+    .banner
+      .i-right
+        img
+          width: 620px !important
   #hero .i-left
-    margin-left: 50px
+    margin-left: 100px
   #highlights
     .inner
       padding: 90px 200px 74px
@@ -267,16 +277,14 @@ body
       justify-content: space-between
       margin-top: 100px
 
-@media screen and (max-width: 1750px)
+@media screen and (max-width: 1680px)
   .banner
     .i-right
       img
-        width: 706px !important
-@media screen and (max-width: 1550px)
-  .banner
-    .i-right
-      img
-        width: 606px !important
+        width: 780px !important
+  .indexs
+    .i-left
+      margin-left: 100px
   #hero .button .fa
     font-size: 1.5em
   #footer
@@ -285,5 +293,7 @@ body
 @media screen and (max-width: 1200px)
   .banner .i-right img
     width: 506px !important
-  body
-    font-size: 12px
+@media screen and (min-width: 2000px)
+  #hero .i-left
+    min-width: 950px
+  
