@@ -6,23 +6,24 @@
                     <div class="item-1-img">
                         <img src="<%- url_for("/images/logo_download.png") %>">
                     </div>
-                    <div class="title-text">手机版下载</div>
+                    <div class="title-text">UUOS钱包</div>
+                    <div class="content-text">手机版下载</div>
                 </div>
                 <div class="item-2">
+                    <div class="download">
+                        <div class="dlbutton" id="ios"><i class="fa fa-apple fa-2x"></i><a href="#">iPhone下载</a></div>
+                        <div class="dlbutton" id="android"><i class="fa fa-android fa-2x"></i><a href="#">Android下载</a></div>
+                    </div>
                     <div class="QRcode">
                         <img id="qrcode" src="<%- url_for("/images/QRcode.png") %>">
-                        <div class="text-scan">UUOS Wallet App</div>
                     </div>
-                    <div class="download">
-                        <div class="dlbutton" id="ios"><i class="fa fa-apple fa-2x"></i><a href="#">IOS</a></div>
-                        <div class="dlbutton" id="android"><i class="fa fa-android fa-2x"></i><a href="#">Android</a></div>
-                    </div>                
                 </div>
             </div>
         </div>
-        <div class="intro-content-b">        
-            <a href="<%- url_for("/download_cn.html") %>" class="switch-download"><i class="fas fa-mobile-alt"></i>手机版下载</a>
-            <a href="<%- url_for("/download_pc_cn.html") %>" class="switch-download button-blue"><i class="fas fa-desktop"></i></i>电脑版下载</a>
+        <div class="ellipse"></div>
+        <div class="intro-content-b">
+            <a href="<%- url_for("/download_cn.html") %>" class="switch-download"><img class="fa" src="<%- url_for("/images/mp_normal.png") %>">手机版下载</a>
+            <a href="<%- url_for("/download_pc_cn.html") %>" class="switch-download button-blue"><img class="fa" src="<%- url_for("/images/pc_down.png") %>">电脑版下载</a>
         </div>
     </div>
     

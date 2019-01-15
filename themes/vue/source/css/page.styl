@@ -200,21 +200,9 @@
   .sidebar
     position: fixed
 
-@media screen and (max-width: 1700px)
-  #intro 
-    .intro-content
-      padding: 10% 0 0 !important
 @media screen and (max-width: 1300px)
   .content.with-sidebar
     margin-left: 290px
-  #ad
-    z-index: 1
-    position: relative
-    padding: 0
-    bottom: 0
-    right: 0
-    float: right
-    padding: 0 0 20px 30px
   #intro .intro-content .intro-content-l img
     width: 450px !important
 
@@ -272,6 +260,10 @@
     text-align: center
   #intro .intro-content .intro-content-r .title-text
     width: 100% !important
+  
+  #intro 
+    .intro-content
+      padding: 8% 0 0 !important
 
 @media screen and (max-width: 560px)
   #downloads
@@ -283,11 +275,12 @@
   iframe
     margin: 0 !important
   #intro
-    background-image:''
-    .intro-content .intro-content-r 
-      padding: 20px !important
-    .intro-content-b .switch-download
-      margin-left: 0 !important
+    .intro-content
+      .intro-content-r 
+        padding: 20px !important
+        align-items: center !important
+        .item-2
+          justify-content: center
 
 @media print
   .footer
@@ -407,23 +400,20 @@ p
   width:75px !important   
   
 #intro
-  background-image: url(../images/background.png)
-  background-size: 85%
-  background-repeat: no-repeat
   width: 100%
   .intro-content
     display:flex
     padding-left: 1px
     box-sizing:border-box
-    padding: 8% 100px 0
-    justify-content: space-between
+    padding: 4% 100px 0
+    justify-content: center
     align-items: center
     width:100%
     .intro-content-l
       width: 45%
       margin-right: 50px
       img
-        width: 650px
+        width: 580px
     .imgsize
       img
         width:100%
@@ -433,35 +423,31 @@ p
       align-items: flex-start
       flex-direction: column
       .item-1
-        display:flex
         img
           width:131px
       .title-text
         color: #5C5C5C
-        font-size: 48px
+        font-size: 3.125em
         width:435px
-        margin: 30px 15px 0 40px
+        margin: 25px 0 0
         position:relative
         font-weight: bold
-        &::before
-          content: 'UUOS Wallet'
-          position:absolute;
-          font-size: 72px
-          top: -24px
-          height: 70px
-          color:rgba(92,92,92,0.1)
+      .content-text
+        color: #878787
+        font-size: 1.875em
+        margin: 15px 0 0
       .item-2
         display: flex
-        margin: 90px 0
-        background: rgba(255,255,255,0.3)
+        margin-top: 3.625em
         border-radius: 30px
-        padding: 40px
         flex-wrap: wrap
+        align-items: center
         .text-scan
           margin: 15px auto
           text-align: center
           font-size: 16px
         .download
+          padding: 1.5em 0
           .dlbutton 
             background: #fff
             width: 226px
@@ -472,7 +458,6 @@ p
             justify-content: left
             align-items: center
             font-size: 18px
-            box-shadow: 1px 1px 24px 5px rgba(0,72,255,0.23)
             a
               color: #3B8EF3
             .fa
@@ -480,13 +465,14 @@ p
               padding-left: 20px
               padding-right: 15px
               font-size: 30px
-          :hover
-            background: #3B8EF3
-            color: #fff
-            a
+            &:hover
+              background: #3B8EF3
               color: #fff
+              box-shadow: 1px 1px 24px 5px rgba(0,72,255,0.23)
+              a
+                color: #fff
         #ios
-          margin: 5px 0 32px
+          margin-bottom: 32px
         #windows
           margin: 5px 0 32px
         #mac
@@ -494,30 +480,47 @@ p
         .QRcode
           position:relative
           z-index: 1
-          margin-right: 48px
+          margin-left: 2.8em
+          background: #fff
+          padding: 10px
+          border-radius: 10px
           img
             width:150px
+  .ellipse
+    width: 100%
+    height: 100px
+    background-color: $lightblue
+    border-radius: 50%
+    position: relative
+    z-index: 2
   .intro-content-b
     display:flex
     justify-content:center
-    margin-bottom: 40px
+    height: 150px
+    background: #4F8AE7
+    position: relative
+    margin-top: -50px
+    padding-top: 120px
     flex-wrap: wrap
     .switch-download
-      width:275px
+      width:12em
       height:58px
-      box-shadow:1px 1px 24px 5px rgba(0,72,255,0.23)
       border-radius:10px
-      font-size:24px
-      margin-left:69px
-      margin-bottom:20px
+      font-size: 1.5em
+      margin: 0 2em
       background: #fff
       text-align: center
       line-height: 58px
-      color:#3B8EF3
-      .fas
+      color:#2575D8
+      box-sizing: border-box
+      .fa
         padding-right: 10px
-        font-sise: 27px
+        font-size: 1.7em
+        position: relative;
+        top: 9px
     .button-blue
-      background:#3B8EF3
+      background: #4F8AE7
       color:#fff
-          
+      border:2px solid #FFF
+      box-shadow:1px 1px 24px 5px rgba(0,72,255,0.23)
+      border-radius:10px
