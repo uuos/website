@@ -283,6 +283,9 @@
           justify-content: center
           .QRcode
             margin-left: 0.5em !important
+          .download 
+            .dlbutton
+              margin: 0.5em 0
 
 @media print
   .footer
@@ -431,7 +434,7 @@ p
           width:8em
       .title-text
         color: #5C5C5C
-        font-size: 3.125em
+        font-size: 3.625em
         width:435px
         margin: 25px 0 0
         position:relative
@@ -439,7 +442,6 @@ p
       .content-text
         color: #878787
         font-size: 1.875em
-        margin: 15px 0 0
       .item-2
         display: flex
         margin-top: 2em
@@ -457,7 +459,7 @@ p
           justify-content: space-between
           .dlbutton 
             background: #fff
-            width: 14.2em
+            width: 13.8em
             height: 3em
             border-radius: 1.75em
             color: #3B8EF3
@@ -465,7 +467,6 @@ p
             align-items: center
             font-size: 1.125em
             box-sizing: border-box
-            margin: 0.5em 0
             a
               color: #3B8EF3
             .fa
@@ -477,18 +478,21 @@ p
               box-shadow: 1px 1px 24px 5px rgba(0,72,255,0.23)
               a
                 color: #fff
-        
+          #windows
+            margin-bottom: 1em
+          #mac
+            margin-bottom: 1em
           
         
         .QRcode
           position:relative
           z-index: 1
-          margin-left: 2.8em
+          margin-left: 2em
           background: #fff
           padding: 10px
           border-radius: 10px
           img
-            width:9em
+            width:8em
   .ellipse
     width: 100%
     height: 100px
