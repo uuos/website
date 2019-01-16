@@ -281,6 +281,8 @@
         align-items: center !important
         .item-2
           justify-content: center
+          .QRcode
+            margin-left: 0.5em !important
 
 @media print
   .footer
@@ -416,15 +418,17 @@ p
         width: 580px
     .imgsize
       img
-        width:100%
+        width:85%
     .intro-content-r
       padding: 0 40px
       display: flex
       align-items: flex-start
       flex-direction: column
       .item-1
+        display:flex
+        flex-direction:column
         img
-          width:131px
+          width:8em
       .title-text
         color: #5C5C5C
         font-size: 3.125em
@@ -438,45 +442,44 @@ p
         margin: 15px 0 0
       .item-2
         display: flex
-        margin-top: 3.625em
+        margin-top: 2em
         border-radius: 30px
         flex-wrap: wrap
-        align-items: center
+        align-items: stretch
         .text-scan
           margin: 15px auto
           text-align: center
           font-size: 16px
         .download
-          padding: 1.5em 0
+          padding: 0.5em 0
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between
           .dlbutton 
             background: #fff
-            width: 226px
-            height: 58px
-            border-radius: 28px
+            width: 14.2em
+            height: 3em
+            border-radius: 1.75em
             color: #3B8EF3
             display: flex
-            justify-content: left
             align-items: center
-            font-size: 18px
+            font-size: 1.125em
+            box-sizing: border-box
+            margin: 0.5em 0
             a
               color: #3B8EF3
             .fa
-              height: 30px
-              padding-left: 20px
-              padding-right: 15px
-              font-size: 30px
+              padding: 0 0.4em 0 0.9em
+              font-size: 1.56em
             &:hover
               background: #3B8EF3
               color: #fff
               box-shadow: 1px 1px 24px 5px rgba(0,72,255,0.23)
               a
                 color: #fff
-        #ios
-          margin-bottom: 32px
-        #windows
-          margin: 5px 0 32px
-        #mac
-          margin: 5px 0 32px
+        
+          
+        
         .QRcode
           position:relative
           z-index: 1
@@ -485,7 +488,7 @@ p
           padding: 10px
           border-radius: 10px
           img
-            width:150px
+            width:9em
   .ellipse
     width: 100%
     height: 100px

@@ -127,7 +127,6 @@ body
 #highlights
   padding-bottom: 70px
   .inner
-    max-width: $m-width
     padding: 90px 300px 74px
     text-align: center
     
@@ -180,6 +179,44 @@ body
   a
     font-weight: 700
     color: #fff
+
+
+
+
+@media screen and (min-width: $width)
+  #highlights
+    .inner
+      display: flex
+      justify-content: space-between
+      margin-top: 100px
+
+@media screen and (max-width: 1680px)
+  .banner
+    .i-right
+      img
+        width: 780px !important
+  .indexs
+    .i-left
+      margin-left: 100px
+  #hero .button .fa
+    font-size: 1.5em
+  #footer
+    padding: 20px 0
+
+@media screen and (max-width: $m-width)
+
+  body
+    -webkit-text-size-adjust: none
+    font-size: 14px
+    .banner
+      .i-right
+        img
+          width: 620px !important
+  #hero .i-left
+    margin-left: 100px
+  #highlights
+    .inner
+      padding: 90px 200px 74px
 
 @media screen and (max-width: $width)
   body
@@ -235,24 +272,6 @@ body
       margin: 20px auto
       width: 300px
       padding: 0 40px 30px
-     
-      
-
-@media screen and (max-width: $m-width)
-
-  body
-    -webkit-text-size-adjust: none
-    font-size: 14px
-    .banner
-      .i-right
-        img
-          width: 620px !important
-  #hero .i-left
-    margin-left: 100px
-  #highlights
-    .inner
-      padding: 90px 200px 74px
-  
 
 @media screen and (max-width: $width)
   .banner
@@ -270,30 +289,10 @@ body
     .inner
       padding: 90px 0
 
-@media screen and (min-width: $width)
-  #highlights
-    .inner
-      display: flex
-      justify-content: space-between
-      margin-top: 100px
-
-@media screen and (max-width: 1680px)
-  .banner
-    .i-right
-      img
-        width: 780px !important
-  .indexs
-    .i-left
-      margin-left: 100px
-  #hero .button .fa
-    font-size: 1.5em
-  #footer
-    padding: 20px 0
-
 @media screen and (max-width: 1200px)
   .banner .i-right img
     width: 506px !important
 @media screen and (min-width: 2000px)
   #hero .i-left
-    min-width: 950px
+    max-width: 1050px
   
