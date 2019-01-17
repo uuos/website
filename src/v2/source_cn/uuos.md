@@ -1,6 +1,6 @@
 ---
 title: UUOS
-type: source_en
+type: source_cn
 order: 0
 ---
 

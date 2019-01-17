@@ -1,6 +1,6 @@
 ---
 title: UUOS api 接口
-type: source_en
+type: source_cn
 order: 5
 ---
 

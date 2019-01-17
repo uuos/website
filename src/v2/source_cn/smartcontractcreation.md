@@ -1,6 +1,6 @@
 ---
 title: 智能合约创建
-type: source_en
+type: source_cn
 order: 3
 ---
 

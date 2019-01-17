@@ -1,6 +1,6 @@
 ---
 title: 索引
-type: source_en
+type: source_cn
 order: 1
 ---
 

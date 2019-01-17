@@ -1,6 +1,6 @@
 ---
 title: 智能合约调试
-type: source_en
+type: source_cn
 order: 4
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 构建
-type: source_en
+type: source_cn
 order: 2
 ---
 
