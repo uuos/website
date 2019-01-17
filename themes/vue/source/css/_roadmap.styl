@@ -1,20 +1,121 @@
 $width = 900px
 
+
+.roadmap
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    
+.roadmap h2
+    font-family: NeuzeitGro-Bol,sans-serif;
+    color: #0a2140;
+    font-size: 35px;
+    font-weight: 600;
+    
+    position: relative;
+    letter-spacing: 3px;
+
+.roadmap .line 
+    background: #87e300;
+    height: 2px;
+    width: 100%;
+    margin-top: 120px;
+
+
+p.date 
+    font-size: 18px;
+    color: #445569;
+    letter-spacing: -.53px;
+    font-weight: bold;
+    font-family: Arial;
+p 
+    margin: 0 0 10px;
+.square
+    width: 30px
+    height: 30px
+    background: #87e300
+    transform: rotate(45deg)
+    margin-top: 0px
+
+.step-txt
+    width: 92%;
+    margin-top: 30px;
+
+
+.txt-list
+    font-family: SofiaProRegular,sans-serif;
+    font-size: 16px;
+    color: #0a2140;
+    line-height: 25px;
+    margin: 16px 0;
+
+.txt-list
+  span
+    color: #23bf11;
+    font-weight: bold;
+
+
+.step-list1
+    width: 100%;
+    margin-top: 30px;
+
+
+.left
+      float: left;
+      width: 20%;
+      text-align: left;
+.right
+      margin-top:0;
+      width: 75%;
+      float: left;
+
+.line1
+    background: #87e300;
+    width: 2px;
+    height:100%;
+    position: absolute;
+    left:30px 
+
+.hidden-lg
+    display:none
+.col-lg-3
+      float:left
+      width: 25%
+.container 
+    padding-right: 15px
+    padding-left: 15px
+    margin-right: auto
+    margin-left: auto
+
 .r-banner
     background:url(/images/roadmap_banner.png) no-repeat
     background-size: 90%
     background-position: center
     padding-bottom: 34%
+    
 @media screen and (max-width: $width)
     .r-banner
         margin-top: 40px
 
+@media screen and (max-width: 900px)  
+  .roadmap 
+    h2
+        font-size: 34px !important
+        top:30px
+        margin-left: 3%;
+    .list1
+        margin-top: 80px
+    
+    .line1
+        margin-top: 80px
+  .hidden-lg
+    display:block !important
 
 @media screen and (min-width: $width)
     .roadmap
         padding: 0 110px
-        background: #dfedff
-        
+        background: #dfedff        
         h2
             margin: 70px 20px 40px
             width: 180px
