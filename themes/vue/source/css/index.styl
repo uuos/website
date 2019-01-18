@@ -34,18 +34,19 @@ body
   overflow:hidden
   background-image: url(../images/bg_banner.png)
   background-repeat: no-repeat
-  background-size: 100%
-  padding-bottom: 7%
-  background-position-y: -60px
+  background-size: cover
+  padding-bottom: 2%
+  background-position-y: -150px
   .inner
     max-width: $width * 1.4
     margin: 0 auto
   .banner
     position: relative
-    top: 70px
+    top: 50px
     display:flex
     justify-content:center
     align-items: center
+    margin: 20px 50px
   .i-right
     width:35%
     position:relative
@@ -243,10 +244,13 @@ body
 @media screen and (max-width: $m-width)
   body
     font-size:14px
-  #hero .i-left
-    margin-left: 100px
+  #hero 
+    padding-bottom: 6%
+    background-position-y: -60px
+    .i-left
+      margin-left: 100px
 
-@media screen and (max-width: 1180px)
+@media screen and (max-width: 1200px)
   #hero
     background-size: cover
     padding-bottom: 10%
@@ -261,6 +265,7 @@ body
   .banner
     top: 0 !important
     padding: 0
+    margin: 0 !important
     flex-wrap: wrap
     .i-left
       margin-left: 50px !important
