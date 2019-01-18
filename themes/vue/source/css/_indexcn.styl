@@ -6,10 +6,10 @@ $space = 40px
 body
   background-color: $lightblue
 .indexs
-  background-color: $lightblue
+  background-color: #CFE4FF
   .i-left
-    margin-left: 150px
-    width: 100%
+    margin-left: 50px
+    width: 40%
   .fillcolor
     background:#f2f2f2
     max-width: none
@@ -34,27 +34,52 @@ body
 #hero,
 #news
   overflow:hidden
-  background-image: url(../images/home_banner.png)
+  background-image: url(../images/bg_banner.png)
   background-repeat: no-repeat
-  background-position-y: bottom
   background-size: 100%
-  padding-bottom: 22%
+  padding-bottom: 7%
+  background-position-y: -60px
   .inner
     max-width: $width * 1.4
     margin: 0 auto
   .banner
     position: relative
-    top: 100px
+    top: 70px
     display:flex
-    justify-content:flex-end
+    justify-content:center
+    align-items: center
     .i-right
       img
-        width: 906px  
-  .i-left, .i-right
-    vertical-align: top
+        width: 100%
+  .i-right
+    position:relative
+    width:35%
+    &:after
+      content: ''
+      background:url(../images/d_line.png)
+      position: absolute
+      top: 1em
+      right: 1em
+      background-size: 100%
+      background-repeat: no-repeat
+      width: 8.7em
+      height: 4em
   .i-left
+    position:relative
+    vertical-align: top
     margin-right:50px
     margin-top: 50px
+    padding-bottom: 3em
+    &:after
+      content: ''
+      background:url(../images/d_line.png)
+      position: absolute
+      top: -8em
+      left: -8em
+      background-size: 100%
+      background-repeat: no-repeat
+      width: 8.5em
+      height: 4em
   .hero-logo
     width: 215px
     height: 215px
@@ -123,21 +148,36 @@ body
     margin: 15px
 
 #highlights
-  padding-bottom: 70px
+  padding: 70px 0
+  background: #fff
+  .point-title
+    max-width: $m-width
+    text-align: center
+    colot: #585858
+    font-size: 3em
+    margin: 0 auto
+    position:relative
+    &:after
+      content:''
+      width:8%
+      height:5px
+      background: #009DFF
+      position: absolute
+      bottom: -20%
+      left: 46%
   .inner
-    padding: 90px 300px 74px
+    padding: 90px 200px 74px
     text-align: center
     
   .point
-    width: 24%
+    width: 23%
     vertical-align: top
     box-sizing: border-box
     padding: 28px 2em
-    border-radius: 20px
-    &:hover
-      box-shadow:0px 0px 40px 0px rgba(15,100,202,0.1)
-      border-radius:20px
-      background:#FFFFFF
+    border-radius: 20px    
+    box-shadow:0px 0px 40px 0px rgba(15,100,202,0.1)
+    border-radius:20px
+    background:#FFFFFF
     h2
       color: #333
       font-size: 20px
@@ -158,17 +198,26 @@ body
       color: $light
       font-size: 1.16em
     > img
-        width: 10.5em
-    
+        height: 30%
+        max-height: 9em
 
 
 #footer
   padding: $space 0
+  background-color: #fff
+  text-align:center
+  position: relative
   color: #fff
-  text-align: center
-  background-image: url(../images/home_bottom.png)
-  background-repeat: no-repeat
-  background-size: 100%
+  .oval
+    height:80px
+    border-radius:50%
+    background: #7AB4FF
+  .footer-icon
+    margin-top: -40px
+    background: #7AB4FF
+    position: absolute
+    width: 100%
+    height: 12em
   .social-icon
     margin 0 30px
     img
@@ -186,16 +235,8 @@ body
     .inner
       display: flex
       justify-content: space-between
-      margin-top: 100px
 
 @media screen and (max-width: 1680px)
-  .banner
-    .i-right
-      img
-        width: 780px !important
-  .indexs
-    .i-left
-      margin-left: 100px
   #hero .button .fa
     font-size: 1.5em
   #footer
@@ -206,12 +247,6 @@ body
   body
     -webkit-text-size-adjust: none
     font-size: 14px
-    .banner
-      .i-right
-        img
-          width: 620px !important
-  #hero .i-left
-    margin-left: 100px
   #highlights
     .inner
       padding: 90px 200px 74px
@@ -244,7 +279,6 @@ body
     .i-left
       text-align: center
       width: 100%
-      margin-left: 50px !important
     .i-right
       width: 100%
     h1
@@ -287,9 +321,6 @@ body
     .inner
       padding: 90px 0
 
-@media screen and (max-width: 1200px)
-  .banner .i-right img
-    width: 506px !important
 @media screen and (min-width: 2000px)
   #hero .i-left
     max-width: 1050px
