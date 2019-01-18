@@ -243,13 +243,15 @@ body
     padding: 20px 0
 
 @media screen and (max-width: $m-width)
-
   body
     -webkit-text-size-adjust: none
     font-size: 14px
-  #highlights
-    .inner
-      padding: 90px 200px 74px
+
+@media screen and (max-width: 1180px)
+  #hero
+    background-size: cover
+    padding-bottom: 10%
+    background-position-y: 0
 
 @media screen and (max-width: $width)
   body
@@ -259,8 +261,19 @@ body
     display: block
   .banner
     top: 0 !important
+    padding: 0
+    flex-wrap: wrap
+    .i-left
+      margin-left: 10px !important
+      margin-right: 10px !important
+      width: 100%
+      text-align: center
+      &:after
+        display:none
     .i-right
-      display: none
+      width: 55% !important
+      &:after
+        display:none
     .text-top
       font-size: 4em !important
     .text-bottom
@@ -270,17 +283,15 @@ body
   #mobile-bar
     display: block
   #hero
-    padding: $space 0
+    padding-top: $space
+    background-position-y: 100%
+    padding-bottom: 0%
+    background-size: 100%
     .hero-logo
       float: none
       margin: 30px 0 15px
       width: 140px
       height: 140px
-    .i-left
-      text-align: center
-      width: 100%
-    .i-right
-      width: 100%
     h1
       font-size: 2em
     h2
@@ -299,27 +310,16 @@ body
     img
       width: 125px
   #highlights
-    .point
-      display: block
-      margin: 20px auto
-      width: 300px
-      padding: 0 40px 30px
-
-@media screen and (max-width: $width)
-  .banner
-    top: 0
-    padding: 0
-    h2
-      color: #fff
-  #footer
-    padding: 20px 0
-    background-size: auto 100%
-    background-position: center
-    .social-icon
-      margin: 0 10px
-  #highlights 
     .inner
       padding: 90px 0
+      .point
+        display: block
+        margin: 20px auto
+        width: 300px
+        padding: 30px 40px 30px
+  #footer
+    .social-icon
+      margin: 0 10px
 
 @media screen and (min-width: 2000px)
   #hero .i-left
