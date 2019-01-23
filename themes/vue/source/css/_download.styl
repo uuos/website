@@ -1,6 +1,10 @@
 
 #intro
   width: 100%
+  height: 90vh
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
   .intro-content
     display:flex
     padding-left: 1px
@@ -9,11 +13,12 @@
     justify-content: center
     align-items: center
     width:100%
-    .intro-content-l
+    flex-grow: 1
+    .intro-content-l      
       width: 43em
       margin-right: 3.125em
       img
-        width: 580px
+        width: 550px
     .intro-content-r
       padding: 0 40px
       display: flex
@@ -89,7 +94,7 @@
             width:8em
   .ellipse
     width: 100%
-    height: 70px
+    height: 50px
     background-color: $lightblue
     border-radius: 50%
     position: relative
@@ -100,8 +105,8 @@
     height: 100px
     background: #4F8AE7
     position: relative
-    margin-top: -35px
-    padding-top: 100px
+    margin-top: -23px
+    padding-top: 70px
     flex-wrap: wrap
     .switch-download
       width:12em
@@ -132,15 +137,18 @@
       padding: 10px 10px 0
       .intro-content-l
         width: 35em
+        img
+          width:450px
 
 @media screen and (max-width: 900px)
   #intro
+    height: 100vh
     .intro-content
         padding: 8% 0 0 !important
         display:flex
         flex-wrap: wrap
         .intro-content-l
-          width: 65%
+          width: 50%
           margin: 0
           img
             width:100%
@@ -150,12 +158,17 @@
             .item-1-img
               display:none
             .title-text
-                width: 100% !important
+              width: 100% !important
+              margin: 0
+              font-size: 3em
+            .content-text
+              font-size: 1.5em
           .item-2
+            margin-top: 0.7em
             .QRcode
               display:none
     .intro-content-b
-      height:150px !important
+      height: 70px !important
       .switch-download
         font-size: 1em
         height: 3.5em
@@ -170,7 +183,6 @@
   #intro
     .intro-content
       .intro-content-r 
-        padding: 20px !important
         align-items: center !important
         .item-2
           justify-content: center

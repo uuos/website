@@ -29,6 +29,11 @@
       <%- partial('partials/download_pc') %>
     <% } else if (page.type === 'downloadpccn') { %>
       <%- partial('partials/download_pc_cn') %>
+    
+      <% } else if (page.type === 'bulletin') { %>
+      <%- partial('partials/bulletin') %>
+    <% } else if (page.type === 'downloadcn') { %>
+      <%- partial('partials/download_cn') %>
     <% } %>
     
   <% } %>
