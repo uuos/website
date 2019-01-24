@@ -1,0 +1,63 @@
+.banner-wrapper
+  margin-top: 40px
+  height: 30em
+  .banner-content
+    height: 27em
+    background-image: url(../images/bg_banner_1.png)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    display: flex
+    .banner-title
+      width: 25em
+      padding-left: 18%
+      padding-top: 1em
+      font-size:4.5em
+      color: #FFFFFF
+.bl-wrapper
+  background:#FFFFFF
+  width: 100%
+  .bl-content
+    width: 75em
+    margin: 0 auto
+    padding-top: 5em
+    .bl-item
+      display:flex
+      height: 12.5em
+      border-bottom: 1px solid #EEEEEE
+      padding-bottom: 4em
+      padding-top: 2em
+      justify-content: space-between
+      align-items: center
+      &:hover
+        .bl-square
+          background: #EB4F38
+        .bl-item-title
+          color: #EB4F38
+      .bl-square
+        width: 7.5em
+        height: 7.5em
+        background: #0099E4
+        border-radius: 0.93em
+        position: relative
+        color: #FFFFFF
+        .bl-date
+          font-size: 3.75em
+          font-weight:bold
+          text-align: center
+        .bl-month
+          font-size: 1.125em
+          background: rgba(0,0,0,0.1)
+          text-align: center
+          position: absolute
+          width: 100%
+          height: 2em
+          bottom: 0
+          line-height: 2em
+          border-radius: 0 0 0.93em 0.93em
+      .bl-item-content
+        width: 62.5em
+        .bl-item-title
+          color: #0099E4
+        .bl-item-text
+          color: #666666
