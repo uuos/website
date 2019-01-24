@@ -37,18 +37,17 @@ body
   background-image: url(../images/bg_banner.png)
   background-repeat: no-repeat
   background-size: cover
-  padding-bottom: 2%
-  background-position-y: 75%
+  background-position-y: 80%
   .inner
     max-width: $width * 1.4
     margin: 0 auto
   .banner
     position: relative
-    top: 50px
+    top: 2em
     display:flex
     justify-content:center
     align-items: center
-    margin: 20px 50px
+    margin: 1em 3em
     .i-right
       img
         width: 100%
@@ -75,7 +74,7 @@ body
       content: ''
       background:url(../images/d_line.png)
       position: absolute
-      top: -8em
+      top: -4em
       left: -8em
       background-size: 100%
       background-repeat: no-repeat
@@ -151,7 +150,7 @@ body
     margin: 15px
 
 #highlights
-  padding: 70px 0
+  padding: 4em 0
   background: #fff
   .point-title
     max-width: 400px
@@ -251,7 +250,11 @@ body
     -webkit-text-size-adjust: none
     font-size: 14px
   #hero
-    padding-bottom: 6%
+    .banner
+      top: 0
+  #highlights
+    .inner
+      padding: 5em 100px
 
 @media screen and (max-width: 1200px)
   #hero

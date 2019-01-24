@@ -35,18 +35,17 @@ body
   background-image: url(../images/bg_banner.png)
   background-repeat: no-repeat
   background-size: cover
-  padding-bottom: 2%
-  background-position-y: 75%
+  background-position-y: 80%
   .inner
     max-width: $width * 1.4
     margin: 0 auto
   .banner
     position: relative
-    top: 50px
+    top: 2em
     display:flex
     justify-content:center
     align-items: center
-    margin: 20px 50px
+    margin: 1em 3em
   .i-right
     width:35%
     position:relative
@@ -246,10 +245,14 @@ body
 @media screen and (max-width: $m-width)
   body
     font-size:14px
-  #hero 
-    padding-bottom: 6%
+  #hero
+    .banner
+      top: 0
     .i-left
       margin-left: 100px
+  #highlights
+    .inner
+      padding: 5em 100px
 
 @media screen and (max-width: 1200px)
   #hero
@@ -330,6 +333,10 @@ body
     max-width: 580px
 
 @media screen and (min-width: 2000px)
-  #hero .i-left
-    min-width: 1050px
+  #hero
+    background-position-y: 85%
+    .i-left
+      max-width: 1050px
+    .i-right
+      max-width: 700px
   
