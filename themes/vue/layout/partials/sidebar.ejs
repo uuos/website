@@ -1,4 +1,4 @@
-<% var selfpagecn = (page.type === 'indexcn' || page.type === 'source_cn' || page.type === 'devcn' || page.type === 'downloadcn' || page.type === 'downloadpccn') %>
+<% var selfpagecn = (page.type === 'indexcn' || page.type === 'source_cn' || page.type === 'roadmapcn' || page.type === 'downloadcn' || page.type === 'downloadpccn') %>
 
 <div class="sidebar">
   <div class="sidebar-inner">
@@ -9,8 +9,7 @@
         <%- partial('partials/main_menu', { context: 'sidebar' }) %>
       <% } %>
     </ul>
-    <div class="list">
-      
+    <div class="list">      
       <% if (type !== 'search') { %>
         <%- partial('partials/toc', { type: type }) %>
       <% } %>

@@ -1,8 +1,13 @@
+<% var pageen = ''
+  if (page.type === 'source_cn') { 
+  pageen = (page.path).replace('source_cn','source')
+ } else {
+  pageen = (page.type).replace('cn','.html')
+ } %>
 <li class="nav-dropdown-container language">
     <a class="nav-link">语言</a><span class="arrow"></span>
-    <ul class="nav-dropdown">
-      <li><a href="<%- url_for("/index.html") %>" class="nav-link"">English</a></li>
-      
+    <ul class="nav-dropdown">      
+        <li><a href="<%- url_for(pageen) %>" class="nav-link"">English</a></li>      
     </ul>
   </li>
   

@@ -1,7 +1,12 @@
+<% var pagecn = ''
+  if (page.type === 'source') { 
+  pagecn = (page.path).replace('source','source_cn')
+ } else {
+  pagecn = (page.type)+'_cn.html'
+ } %>
 <li class="nav-dropdown-container language">
   <a class="nav-link">Language</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="<%- url_for("/index_cn.html") %>" class="nav-link">中文</a></li>
-    
+    <li><a href="<%- url_for(pagecn) %>" class="nav-link">中文</a></li>    
   </ul>
 </li>
