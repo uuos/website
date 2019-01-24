@@ -1,9 +1,11 @@
 <% var pagecn = ''
   if (page.type === 'source') { 
   pagecn = (page.path).replace('source','source_cn')
- } else {
-  pagecn = (page.type)+'_cn.html'
- } %>
+  } else if(page.path === 'index.html'){
+    pagecn = 'index_cn.html'
+  } else {
+    pagecn = (page.type)+'_cn.html'
+  } %>
 <li class="nav-dropdown-container language">
   <a class="nav-link">Language</a><span class="arrow"></span>
   <ul class="nav-dropdown">
