@@ -1,65 +1,115 @@
 <div class="sidebar">
-    <div class="sidebar-inner-index">
-      <ul class="main-menu">
-        <%- partial('partials/main_menu_cn', { context: 'sidebar' }) %>
-      </ul>
+  <div class="sidebar-inner-index">
+    <ul class="main-menu">
+      <%- partial('partials/main_menu_cn', { context: 'sidebar' }) %>
+    </ul>
+  </div>
+</div>
+  
+<div id="hero">
+  <div class="banner">
+    <div class="i-left">
+      <div class="text-top">一个通用</div>
+      <div class="text-bottom">智能合约平台</div>
+          <p>
+            <a class="button why" href="<%- url_for("/v2/source_cn/uuos.html") %>" target="_blank">为什么是UUOS?</a>
+            <a class="button start" href="<%- url_for("/v2/source_cn") %>" target="_blank">开始</a>
+            <a class="button git has-icon" href="https://github.com/uuos/uuos" target="_blank">
+              <i class="fa fa-github fa-4x"></i>
+              <span>GITHUB</span></a>
+          </p>
+    </div>
+    <div class="i-right">
+      <img src="<%- url_for("/images/chahua.png") %>">
     </div>
   </div>
-  
-  <div id="hero">
-    <div class="banner">
-      <div class="i-left">
-        <div class="text-top">一个通用</div>
-        <div class="text-bottom">智能合约平台</div>
-            <p>
-              <a class="button why" href="<%- url_for("/v2/source_cn/uuos.html") %>" target="_blank">为什么是UUOS?</a>
-              <a class="button start" href="<%- url_for("/v2/source_cn") %>" target="_blank">开始</a>
-              <a class="button git has-icon" href="https://github.com/uuos/uuos" target="_blank">
-                <i class="fa fa-github fa-4x"></i>
-                <span>GITHUB</span></a>
-            </p>
-      </div>
-      <div class="i-right">
-        <img src="<%- url_for("/images/chahua.png") %>">
-      </div>
+</div>
+
+<div id="highlights">
+  <div class="point-title">
+    平台优势
+  </div>
+  <div class="inner">
+    <div class="point">
+        <img src="<%- url_for("/images/icon_GoodExtensibility.png") %>">
+      <h2>可扩展性</h2>
+      <p>
+        <p align="left">UUOS有着良好的扩展性，支持多种智能合约虚拟机，目前除了支持wasm虚拟机，还支持Python, EVM, Lua，Java等虚拟机，集成一种新的虚拟机非常方便.</p>
+      </p>
+    </div>
+
+    <div class="point">
+        <img src="<%- url_for("/images/icon_DeveloperFriendly.png") %>">
+      <h2>对开发者友好</h2>
+      <p>
+        <p align="left">UUOS专注于将Python语言应用于智能合约的开发，提高智能合约语言的易用性，同时注重智能合约的安全性.</p>
+      </p>
+    </div>
+
+    <div class="point">
+      <img src="<%- url_for("/images/icon_On-lineDebugging.png") %>">
+      <h2>在线调试</h2>
+      <p>
+        <p align="left">UUOS支持通过Visual Studio Code等开发工具直接调试C++和Python等智能合约，方便智能合约的开发.</p>
+      </p>
+    </div>
+    <div class="point">
+      <img src="<%- url_for("/images/icon_UpgradeonTheChain.png") %>">
+      <h2>链上升级</h2>
+      <p>
+        <p align="left">UUOS可以做到在不停止结点的情况下升级区块链的VM等模块.</p>
+      </p>
     </div>
   </div>
-  
-  <div id="highlights">
-    <div class="point-title">
-      平台优势
+</div>
+<div id="uuoswallet">
+  <div class="point-title">
+      UUOS Wallet
+  </div>
+  <div id="mobile">
+    <div class="mobileup">
+      <div class="mobileleft">
+        <div class="uuosmobile">
+          UUOS钱包移动端
+        </div>
+        <div class="uuosmobile-content">
+          UUOS Wallet 是一款区块链钱包APP，为用户提供转账、收款、钱包管理等服务，安全放心。
+        </div>
+      </div>
+      <div class="mobileright">
+        <img src="<%- url_for("/images/shouji.png") %>" class="mobileimg">
+      </div>
     </div>
-    <div class="inner">
-      <div class="point">
-          <img src="<%- url_for("/images/icon_GoodExtensibility.png") %>">
-        <h2>可扩展性</h2>
-        <p>
-          <p align="left">UUOS有着良好的扩展性，支持多种智能合约虚拟机，目前除了支持wasm虚拟机，还支持Python, EVM, Lua，Java等虚拟机，集成一种新的虚拟机非常方便.</p>
-        </p>
+    <div class="download-section">
+      <div class="download-text">
+        支持iphone，Android系统下载
       </div>
-  
-      <div class="point">
-          <img src="<%- url_for("/images/icon_DeveloperFriendly.png") %>">
-        <h2>对开发者友好</h2>
-        <p>
-          <p align="left">UUOS专注于将Python语言应用于智能合约的开发，提高智能合约语言的易用性，同时注重智能合约的安全性.</p>
-        </p>
-      </div>
-  
-      <div class="point">
-        <img src="<%- url_for("/images/icon_On-lineDebugging.png") %>">
-        <h2>在线调试</h2>
-        <p>
-          <p align="left">UUOS支持通过Visual Studio Code等开发工具直接调试C++和Python等智能合约，方便智能合约的开发.</p>
-        </p>
-      </div>
-      <div class="point">
-        <img src="<%- url_for("/images/icon_UpgradeonTheChain.png") %>">
-        <h2>链上升级</h2>
-        <p>
-          <p align="left">UUOS可以做到在不停止结点的情况下升级区块链的VM等模块.</p>
-        </p>
-      </div>
+      <a class="download-button">
+        手机版下载
+      </a>
     </div>
   </div>
-  
+  <div id="desktop">
+    <div class="desktopup">
+      <div class="desktopleft">
+        <img src="<%- url_for("/images/diannao.png") %>" class="mobileimg">
+      </div>
+      <div class="desktopright">
+        <div class="uuosdesktop">
+          UUOS钱包PC端
+        </div>
+        <div class="uuosdesktop-content">
+          UUOS钱包PC端支持多平台下载。方便，快捷，高效。
+        </div>
+      </div>
+    </div>
+    <div class="download-section">
+      <div class="download-text">
+        支持Windows，Mac及Linux系统下载
+      </div>
+      <a class="download-button">
+        电脑版下载
+      </a>
+    </div>
+  </div>
+</div>

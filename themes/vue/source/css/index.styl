@@ -152,7 +152,7 @@ body
   .point-title
     max-width: 400px
     text-align: center
-    colot: #585858
+    color: #585858
     font-size: 2.5em
     margin: 0 auto
     position:relative
@@ -165,6 +165,16 @@ body
       position: absolute
       bottom: -40%
       left: 42%
+    &:before
+      content:'PLATFORM ADVANTAGE'
+      font-size: 80px
+      font-weight:bold
+      width:200%
+      height:5px
+      opacity:0.05
+      position: absolute
+      top: -80%
+      left: -50%
   .inner
     padding: 90px 200px 74px
     text-align: center
@@ -201,8 +211,149 @@ body
         height: 30%
         max-height: 9em
     
+#uuoswallet
+  height: 100%
+  overflow: hidden
+  padding: 70px 0
+  background: #fff
+  .point-title
+    max-width: 400px
+    text-align: center
+    color: #585858
+    font-size: 2.5em
+    margin: 0 auto
+    position:relative
+    font-weight: bold
+    margin-bottom: 2em
+    &:after
+      content:''
+      width:16%
+      height:5px
+      background: #009DFF
+      position: absolute
+      bottom: -40%
+      left: 42%
+    &:before
+      content:'UUOS WALLET'
+      font-size: 80px
+      font-weight:bold
+      width:200%
+      height:5px
+      opacity:0.05
+      position: absolute
+      top: -80%
+      left: -50%
+#mobile
+  height: 100%
+  overflow: hidden
+  padding-top: 12.5em
+  
+  .mobileup
+    display: flex
+    height: 31.25em
+    background: #CFE4FF
+    position: relative
+    justify-content: center
+    .mobileleft
+      width: 30em
+      margin-left: 3em
+      margin-right: 2em
+      &:after
+        content:'UUOS WALLET'
+        font-size: 5.8em
+        color: #009DFF
+        font-weight:bold
+        width:80%
+        height:5px
+        opacity:0.1
+        position: absolute
+        top: -25%
+        left: 13%
+      .uuosmobile
+        color: #333333
+        font-size: 2.25em
+        font-weight:bold
+        margin-bottom: 30px
+        margin-top: 80px
+      .uuosmobile-content
+        font-size:18px
+        color: #666666
+        position: relative
+        &:after
+          content:''
+          width:60px
+          height:7px
+          background: #666666
+          position: absolute
+          bottom: -4.2em
+          left: 0%
+    .mobileright
+      width: 37em
+      .mobileimg
+        position: relative
+        top: -9em
+        width: 37em
+.download-section
+  padding-top: 9em
+  .download-text
+    color: #009DFF
+    font-size:30px
+    font-weight:bold
+    text-align:center
+  .download-button
+    display: block
+    background:linear-gradient(-90deg,rgba(71,83,232,0.95),rgba(82,154,241,0.95))
+    border-radius:40px
+    width: 10em
+    height: 2em
+    margin: 36px auto
+    color: #FFFFFF
+    font-size:2.25em
+    text-align:center
+    line-height: 2em
+    font-weight:bold
+#desktop
+  height: 100%
+  overflow: hidden
+  padding-top: 12.5em
+  
+  .desktopup
+    display: flex
+    height: 27em
+    background: #CFE4FF
+    position: relative
+    justify-content: center
+    
+    .desktopleft
+      width: 58em
+      .mobileimg
+        position: relative
+        top: -7em
+        width: 58em
+      
+    .desktopright
+      width: 20em
+      padding: 0 2em
+      .uuosdesktop
+        color: #333333
+        font-size: 2.25em
+        font-weight:bold
+        margin-bottom: 30px
+        margin-top: 80px
+      .uuosdesktop-content
+        font-size:18px
+        color: #666666
+        position: relative
+        &:after
+          content:''
+          width:60px
+          height:7px
+          background: #666666
+          position: absolute
+          bottom: -4.2em
+          left: 0%
 
-
+    
 #footer
   padding: $space 0
   background-color: #fff
