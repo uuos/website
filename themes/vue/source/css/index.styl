@@ -176,11 +176,12 @@ body
       top: -80%
       left: -50%
   .inner
-    padding: 90px 200px 74px
+    padding: 5em 0 4em
     text-align: center
     
   .point
-    width: 23%
+    width: 20em
+    margin: .8em
     vertical-align: top
     box-sizing: border-box
     padding: 2em 2em .5em
@@ -188,6 +189,9 @@ body
     box-shadow:0px 0px 40px 0px rgba(15,100,202,0.1)
     border-radius:20px
     background:#FFFFFF
+    transition: all .5s
+    &:hover
+      transform: scale(1.06)
     h2
       color: #333
       font-size: 1.25em
@@ -376,7 +380,7 @@ body
   #highlights
     .inner
       display: flex
-      justify-content: space-between
+      justify-content: center
 
 @media screen and (max-width: 1680px)
   #hero .button .fa
