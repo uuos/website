@@ -9,8 +9,8 @@ order: 2
 ## 下载源代码
 
 ```bash
-git clone https://www.github.com/learnforpractice/pyeos
-cd UUOS
+git clone https://www.github.com/learnforpractice/eos
+cd eos
 git submodule update --init --recursive
 ```
 
@@ -31,5 +31,5 @@ brew install readline
 ## 构建
 
 ```bash
-./eosio_build.sh
+./eosio_build.py
 ```
