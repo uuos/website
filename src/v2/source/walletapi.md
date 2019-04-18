@@ -105,7 +105,3 @@ wallet.import_key('mywallet', priv_key)
 
 Signs a transaction
 
-
-```python
-
-```

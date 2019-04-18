@@ -107,7 +107,3 @@ wallet.import_key('mywallet', priv_key)
 
 对transaction进行签名
 
-
-```python
-
-```
