@@ -6,24 +6,25 @@ order: 5
 
 # eos api 接口概述
 
+导入eosapi模块
+
 ```python
 from pyeoskit import eosapi
 ```
 
 ### eosapi.create_key
 
-创建一个新的密码
+创建一个新的密码对
 
 ```python
-#在Eos中每个帐户可以拥有有多个key，主要用到的就是owner key和active key.
-#创建一个owner key
 eosapi.create_key()
-#返回值
+
+返回值
+
 {
-    'public':owner_public_key
-    'private':owner_private_key
+    'public':'EOS8Gbv4v7oLnWC3pQwg4tJHbv7cQFuxuDnHAFKrbiVtmKx6VHBwK',
+    'private':'5J6NzFGPDJDFzaiRzezeJwvNHomY91oaDYnQT8kraKUPm6y1bZ5'
 }
-#创建一个active key操作同上
 ```
 
 ### eosapi.create_account
@@ -67,7 +68,7 @@ eosapi.get_block_header_state(block_num_or_id)
 获取帐户信息
 
 ```python
-eosapi.get_account(account_name)
+eosapi.get_account('eosio')
 ```
 
 ### eosapi.get_abi
@@ -75,7 +76,7 @@ eosapi.get_account(account_name)
 获取合约的信息
 
 ```python
-eosapi.get_abi(account_name)
+eosapi.get_abi('eosio.token')
 ```
 
 ### eosapi.get_code
@@ -83,54 +84,51 @@ eosapi.get_abi(account_name)
 获取智能合约代码
 
 ```python
-eosapi.get_code(account_name)
+eosapi.get_code('eosio.token')
 ```
 
 ### eosapi.get_raw_code_and_abi
 
-获取智能合约abi
+获取智能合约二进制代码和abi
 
 ```python
-eosapi.get_raw_code_and_abi(account_name)
+eosapi.get_raw_code_and_abi('eosio.token')
 ```
 
 ### eosapi.get_table_rows
 
-获取智能合约数据信息
+```python
+eosapi.get_table_rows(True, 'eosio.token', 'EOS', 'stat', 'EOS', '', '', 1) 
 
-取出数据库数据，比如币种余额，合约代码要求存的中间状态等等
-
-其中code是合约账户，scope是合约中设定的（相当于mysql的database），table也是合约中设定的（相当于mysql的table）
+```
 
 ```python
-code="eosio"
-scope="eosio"
-table=account_name
-json="true"
-lower_bound=0
-upper_bound=4
-limit=2
+{
+    "rows": [
+        {
+            "supply": "1044451904.2438 EOS",
+            "max_supply": "10000000000.0000 EOS",
+            "issuer": "eosio"
+        }
+    ],
+    "more": false
+}
 
-eosapi.get_table_rows(scope,code,table,json,lower_bound,upper_bound,limit)
 ```
 
 ### eosapi.abi_json_to_bin
 
 将json序列化为十六进制
 
-得到的十六进制通常用于push_transaction中的数据字段。
 
 ```python
-code = 'currency'
-action = 'transfer'
-args = {"from":"initb","to":"initc","quantity":9999}
-eosapi.abi_json_to_bin(code,action,args)
-
-#返回值
+args = {'from':'inita', 'to':'initb', 'quantity':'1.0000 EOS', 'memo':'hello,world'}
+eosapi.abi_json_to_bin('eosio.token', 'transfer', args)
+```
+返回
+```python
 {
-  "binargs": "000000008093dd74000000000094dd74e803000000000000",
-  "required_scope": [],
-  "required_auth": []
+    "binargs": "000000000093dd74000000008093dd74102700000000000004454f53000000000b68656c6c6f2c776f726c64"
 }
 ```
 
@@ -139,125 +137,143 @@ eosapi.abi_json_to_bin(code,action,args)
 将十六进制序列化为json
 
 ```python
-code = 'currency'
-action = 'transfer'
-binargs = '000000008093dd74000000000094dd74e803000000000000'
-eosapi.abi_json_to_bin(code,action,binargs)
+binargs = "000000000093dd74000000008093dd74102700000000000004454f53000000000b68656c6c6f2c776f726c64"
+eosapi.abi_bin_to_json('eosio.token', 'transfer', binargs)
+```
+
+返回
+
+```python
+{
+    "args": {
+        "from": "inita",
+        "to": "initb",
+        "quantity": "1.0000 EOS",
+        "memo": "hello,world"
+    }
+}
 ```
 
 ### eosapi.get_currency_balance
 
-获取账户余额信息（如果没有发布智能合约的话，可能获取不到余额信息）
+获取账户余额信息
 
 ```python
-eosapi.get_currency_balance(code='eosio',account=account_name,symbol='SYS')
+eosapi.get_currency_balance('eosio.token', 'eosio.saving' ,'EOS')
 ```
 
 ### eosapi.get_required_keys
 
-获取必需的密钥，从密钥列表中签署交易
-
-```python
-available_keys=[
-    "EOS5ySgzeHp9G7TqNDGpyzaCtahAeRcTvPRPJbFey5CmySL3vKYgE",
-    "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
-    "EOS6gXwNz2SKUNAZcyjzVvg6KdNgA1bSuVzCr8c5yWkGij52JKx8V"
-    ]
-    
-transaction={
-        "actions": [
-            {
-                "account": "eosio.token",
-                "authorization": [
-                    {
-                        "actor": "eosio",
-                        "permission": "active"
-                    }
-                ],
-                "data": "0000000000ea305500000000487a2b9d102700000000000004454f53000000001163726561746564206279206e6f70726f6d",
-                "name": "transfer"
-            }
-        ],
-        "context_free_actions": [
-        ],
-        "context_free_data": [
-        ],
-        "delay_sec": 0,
-        "expiration": "2018-11-28T17:20:30.500",
-        "max_kcpu_usage": 0,
-        "max_net_usage_words": 0,
-        "ref_block_num": 245107,
-        "ref_block_prefix": 801303063,
-        "signatures": [
-        ]
-    }
-}
-
-eosapi.get_required_keys(available_keys,transaction)
-
-#返回值
-{
-    "required_keys": [
-        "EOS6gXwNz2SKUNAZcyjzVvg6KdNgA1bSuVzCr8c5yWkGij52JKx8V"
-    ]
-}
-```
+获取transaction所需的公钥
 
 ### eosapi.get_currency_stats
 
-获取某代币的信息
+获取token的信息
 
 ```python
-eosapi.get_currency_stats(code='eosio',accountname='your account',symbol='SYS')
+eosapi.get_currency_stats('eosio.token', 'EOS')
 ```
 
+```python
+{
+    "EOS": {
+        "supply": "1010853656.0071 EOS",
+        "max_supply": "10000000000.0000 EOS",
+        "issuer": "eosio"
+    }
+}
+```
 ### eosapi.get_producers
 
-获取产块节点
+获取block producers信息
 
 ```python
-eosapi.get_producers(json,lower_bound)
+eosapi.get_producers(True, "", 2)
+```
+
+```python
+{
+    "rows": [
+        {
+            "owner": "eoshuobipool",
+            "total_votes": "912780250023381248.00000000000000000",
+            "producer_key": "EOS5XKswW26cR5VQeDGwgNb5aixv1AMcKkdDNrC59KzNSBfnH6TR7",
+            "is_active": 1,
+            "url": "http://eoshuobipool.com",
+            "unpaid_blocks": 2508,
+            "last_claim_time": "2019-05-09T00:29:02.000",
+            "location": 0
+        },
+        {
+            "owner": "starteosiobp",
+            "total_votes": "888420867709618944.00000000000000000",
+            "producer_key": "EOS4wZZXm994byKANLuwHD6tV3R3Mu3ktc41aSVXCBaGnXJZJ4pwF",
+            "is_active": 1,
+            "url": "https://www.starteos.io",
+            "unpaid_blocks": 5415,
+            "last_claim_time": "2019-05-08T15:58:09.000",
+            "location": 156
+        }
+    ],
+    "total_producer_vote_weight": "47230651279257329664.00000000000000000",
+    "more": "eoslaomaocom"
+}
 ```
 
 ### eosapi.push_block
 
-产生块
-
-```python
-eosapi.push_block(block)
-```
-
 ### eosapi.push_transaction
 
-发送交易,此方法预期采用JSON格式的事务，并将尝试将其应用于区块链。
+发送交易
 
 ```python
-signed_transaction={
-    "ref_block_num":"101",
-    "ref_block_prefix":"4159312339",
-    "expiration":"2017-09-25T06:28:49",
-    "scope":["initb","initc"],
-    "actions":[{
-        "code":"currency",
-        "type":"transfer",
-        "recipients":["initb","initc"],
-        "authorization":[{
-            "account":"initb","permission":"active"
-            }],
-        "data":"000000000041934b000000008041934be803000000000000"
-        }],
-    "signatures":[],"authorizations":[]
-    }
+from pyeoskit import eosapi
+from pyeoskit import wallet
 
-eosapi.push_transaction(sign_transaction)
+#wallet.unlock('testwallet', 'YOUR WALLET PASSWORD')
+
+args = {"from": 'helloworld12',
+        "to": 'hello',
+        "quantity": '0.0001 EOS',
+        "memo": 'hello,world'
+}
+action = ['eosio.token', 'transfer', args, {'helloworld12':'active'}]
+reference_block_id = eosapi.get_info().last_irreversible_block_id
+trx = eosapi.gen_transaction([action], 120, reference_block_id)
+public_keys = ['EOS4uFSpSqLovSD7cB7XgAkGxnAja3zASnQwuMjoQwP3cwyhdNFdX']
+
+info = eosapi.get_info()
+trx = wallet.sign_transaction(trx, public_keys, info.chain_id)
+trx = eosapi.pack_transaction(trx, 0)
+eosapi.push_transaction(trx)
 ```
 
 ### eosapi.push_transactions
 
-该方法一次推送多个事务,实现同时多次交易。
+push 多个transaction
 
 ```python
-操作同eosapi.push_transaction
+from pyeoskit import db
+from pyeoskit import eosapi
+from pyeoskit import wallet
+
+#wallet.unlock('YOUR WALLET NAME', 'YOUR WALLET PASSWORD')
+
+args1 = {"from": 'helloworld12',
+        "to": 'eosio',
+        "quantity": '0.0001 EOS',
+        "memo": 'hello,world'
+}
+action1 = ['eosio.token', 'transfer', args1, {'helloworld12':'active'}]
+
+args2 = {"from": 'helloworld12',
+        "to": 'eosio.token',
+        "quantity": '0.0001 EOS',
+        "memo": 'hello,world'
+}
+action2 = ['eosio.token', 'transfer', args2, {'helloworld12':'active'}]
+
+r = eosapi.push_transactions([[action1, action2]])
 ```
 
 ### eosapi.get_actions
@@ -267,7 +283,14 @@ eosapi.push_transaction(sign_transaction)
 pos和offset是指：从第pos条记录开始获取offset条Actions
 
 ```python
-eosapi.get_actions(account_name,pos,offset)
+eosapi.get_actions('eosio.token', 0, 1)
+```
+
+```python
+{
+    "actions": [],
+    "last_irreversible_block": 1001186
+}
 ```
 
 ### eosapi.get_transaction
@@ -277,6 +300,7 @@ eosapi.get_actions(account_name,pos,offset)
 ```python
 eosapi.get_transaction(id)
 ```
+
 
 ### eosapi.get_key_accounts
 

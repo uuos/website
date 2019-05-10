@@ -6,6 +6,8 @@ order: 5
 
 # eos api overview
 
+Import eosapi
+
 ```python
 from pyeoskit import eosapi
 ```
@@ -15,15 +17,14 @@ from pyeoskit import eosapi
 Create a new password
 
 ```python
-#In Eos, each account can have multiple keys, and owner key and active key are frequently used.
-#Create a owner key
 eosapi.create_key()
-#Return value
+
+Return value
+
 {
-    'public':owner_public_key
-    'private':owner_private_key
+    'public':'EOS8Gbv4v7oLnWC3pQwg4tJHbv7cQFuxuDnHAFKrbiVtmKx6VHBwK',
+    'private':'5J6NzFGPDJDFzaiRzezeJwvNHomY91oaDYnQT8kraKUPm6y1bZ5'
 }
-#Create an active key. Ditto.
 ```
 
 ### eosapi.create_account
@@ -67,7 +68,7 @@ eosapi.get_block_header_state(block_num_or_id)
 Returns account's information
 
 ```python
-eosapi.get_account(account_name)
+eosapi.get_account('eosio')
 ```
 
 ### eosapi.get_abi
@@ -75,7 +76,7 @@ eosapi.get_account(account_name)
 Returns contract's information
 
 ```python
-eosapi.get_abi(account_name)
+eosapi.get_abi('eosio.token')
 ```
 
 ### eosapi.get_code
@@ -83,54 +84,50 @@ eosapi.get_abi(account_name)
 Returns smart contract's code
 
 ```python
-eosapi.get_code(account_name)
+eosapi.get_code('eosio.token')
 ```
 
 ### eosapi.get_raw_code_and_abi
 
-Returns smart contract's abi
+Returns smart contract's binary code and abi
 
 ```python
-eosapi.get_raw_code_and_abi(account_name)
+eosapi.get_raw_code_and_abi('eosio.token')
 ```
 
 ### eosapi.get_table_rows
 
-Returns smart contract's data information
-
-??Get data from database, such as currency balance, 合约代码要求存的中间状态等等
-
-??"code" is contract account，"scope" is set in contract (similar to mysql's database)，table is also set in contract (similar to mysql's table)
+```python
+eosapi.get_table_rows(True, 'eosio.token', 'EOS', 'stat', 'EOS', '', '', 1)
+```
 
 ```python
-code="eosio"
-scope="eosio"
-table=account_name
-json="true"
-lower_bound=0
-upper_bound=4
-limit=2
-
-eosapi.get_table_rows(scope,code,table,json,lower_bound,upper_bound,limit)
+{
+    "rows": [
+        {
+            "supply": "1044451904.2438 EOS",
+            "max_supply": "10000000000.0000 EOS",
+            "issuer": "eosio"
+        }
+    ],
+    "more": false
+}
 ```
 
 ### eosapi.abi_json_to_bin
 
 Serialize json to hexadecimal codes
 
-Hexadecimal codes received is used for "push_transaction" data field.
+```python
+args = {'from':'inita', 'to':'initb', 'quantity':'1.0000 EOS', 'memo':'hello,world'}
+eosapi.abi_json_to_bin('eosio.token', 'transfer', args)
+```
+
+Returns
 
 ```python
-code = 'currency'
-action = 'transfer'
-args = {"from":"initb","to":"initc","quantity":9999}
-eosapi.abi_json_to_bin(code,action,args)
-
-#Return value
 {
-  "binargs": "000000008093dd74000000000094dd74e803000000000000",
-  "required_scope": [],
-  "required_auth": []
+    "binargs": "000000000093dd74000000008093dd74102700000000000004454f53000000000b68656c6c6f2c776f726c64"
 }
 ```
 
@@ -139,125 +136,141 @@ eosapi.abi_json_to_bin(code,action,args)
 Serialize hexadecimal codes to json
 
 ```python
-code = 'currency'
-action = 'transfer'
-binargs = '000000008093dd74000000000094dd74e803000000000000'
-eosapi.abi_json_to_bin(code,action,binargs)
+binargs = "000000000093dd74000000008093dd74102700000000000004454f53000000000b68656c6c6f2c776f726c64"
+eosapi.abi_bin_to_json('eosio.token', 'transfer', binargs)
+```
+
+```python
+{
+    "args": {
+        "from": "inita",
+        "to": "initb",
+        "quantity": "1.0000 EOS",
+        "memo": "hello,world"
+    }
+}
 ```
 
 ### eosapi.get_currency_balance
 
-Get currency balance information (If there isn't any smart contract, you may not obtain the balance information)
+Get currency balance information
 
 ```python
-eosapi.get_currency_balance(code='eosio',account=account_name,symbol='SYS')
+eosapi.get_currency_balance('eosio.token', 'eosio.saving' ,'EOS')
 ```
 
 ### eosapi.get_required_keys
 
 Returns the required keys needed to sign a transaction
 
-```python
-available_keys=[
-    "EOS5ySgzeHp9G7TqNDGpyzaCtahAeRcTvPRPJbFey5CmySL3vKYgE",
-    "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
-    "EOS6gXwNz2SKUNAZcyjzVvg6KdNgA1bSuVzCr8c5yWkGij52JKx8V"
-    ]
-    
-transaction={
-        "actions": [
-            {
-                "account": "eosio.token",
-                "authorization": [
-                    {
-                        "actor": "eosio",
-                        "permission": "active"
-                    }
-                ],
-                "data": "0000000000ea305500000000487a2b9d102700000000000004454f53000000001163726561746564206279206e6f70726f6d",
-                "name": "transfer"
-            }
-        ],
-        "context_free_actions": [
-        ],
-        "context_free_data": [
-        ],
-        "delay_sec": 0,
-        "expiration": "2018-11-28T17:20:30.500",
-        "max_kcpu_usage": 0,
-        "max_net_usage_words": 0,
-        "ref_block_num": 245107,
-        "ref_block_prefix": 801303063,
-        "signatures": [
-        ]
-    }
-}
-
-eosapi.get_required_keys(available_keys,transaction)
-
-#Return value
-{
-    "required_keys": [
-        "EOS6gXwNz2SKUNAZcyjzVvg6KdNgA1bSuVzCr8c5yWkGij52JKx8V"
-    ]
-}
-```
-
 ### eosapi.get_currency_stats
 
 Get token's information
 
 ```python
-eosapi.get_currency_stats(code='eosio',accountname='your account',symbol='SYS')
+eosapi.get_currency_stats('eosio.token', 'EOS')
 ```
 
+```python
+{
+    "EOS": {
+        "supply": "1010853656.0071 EOS",
+        "max_supply": "10000000000.0000 EOS",
+        "issuer": "eosio"
+    }
+}
+```
 ### eosapi.get_producers
 
-??Get producers' node
+Get block producers' information
 
 ```python
-eosapi.get_producers(json,lower_bound)
+{
+    "rows": [
+        {
+            "owner": "eoshuobipool",
+            "total_votes": "912780250023381248.00000000000000000",
+            "producer_key": "EOS5XKswW26cR5VQeDGwgNb5aixv1AMcKkdDNrC59KzNSBfnH6TR7",
+            "is_active": 1,
+            "url": "http://eoshuobipool.com",
+            "unpaid_blocks": 2508,
+            "last_claim_time": "2019-05-09T00:29:02.000",
+            "location": 0
+        },
+        {
+            "owner": "starteosiobp",
+            "total_votes": "888420867709618944.00000000000000000",
+            "producer_key": "EOS4wZZXm994byKANLuwHD6tV3R3Mu3ktc41aSVXCBaGnXJZJ4pwF",
+            "is_active": 1,
+            "url": "https://www.starteos.io",
+            "unpaid_blocks": 5415,
+            "last_claim_time": "2019-05-08T15:58:09.000",
+            "location": 156
+        }
+    ],
+    "total_producer_vote_weight": "47230651279257329664.00000000000000000",
+    "more": "eoslaomaocom"
+}
+```
+
+```python
+eosapi.get_producers(True, "", 2)
 ```
 
 ### eosapi.push_block
 
-Produce a block
-
-```python
-eosapi.push_block(block)
-```
-
 ### eosapi.push_transaction
 
-Send transaction. This method expects a transaction in JSON format and will attempt to apply it to the blockchain.
+Send transaction
 
 ```python
-signed_transaction={
-    "ref_block_num":"101",
-    "ref_block_prefix":"4159312339",
-    "expiration":"2017-09-25T06:28:49",
-    "scope":["initb","initc"],
-    "actions":[{
-        "code":"currency",
-        "type":"transfer",
-        "recipients":["initb","initc"],
-        "authorization":[{
-            "account":"initb","permission":"active"
-            }],
-        "data":"000000000041934b000000008041934be803000000000000"
-        }],
-    "signatures":[],"authorizations":[]
-    }
+from pyeoskit import eosapi
+from pyeoskit import wallet
 
-eosapi.push_transaction(sign_transaction)
+#wallet.unlock('testwallet', 'YOUR WALLET PASSWORD')
+
+args = {"from": 'helloworld12',
+        "to": 'hello',
+        "quantity": '0.0001 EOS',
+        "memo": 'hello,world'
+}
+action = ['eosio.token', 'transfer', args, {'helloworld12':'active'}]
+reference_block_id = eosapi.get_info().last_irreversible_block_id
+trx = eosapi.gen_transaction([action], 120, reference_block_id)
+public_keys = ['EOS4uFSpSqLovSD7cB7XgAkGxnAja3zASnQwuMjoQwP3cwyhdNFdX']
+
+info = eosapi.get_info()
+trx = wallet.sign_transaction(trx, public_keys, info.chain_id)
+trx = eosapi.pack_transaction(trx, 0)
+eosapi.push_transaction(trx)
 ```
 
 ### eosapi.push_transactions
 
-This method pushes multiple transactions at a time to achieve multiple transactions at the same time.
+Pushes multiple transactions
 
 ```python
-Operation is as eosapi.push_transaction
+from pyeoskit import db
+from pyeoskit import eosapi
+from pyeoskit import wallet
+
+#wallet.unlock('YOUR WALLET NAME', 'YOUR WALLET PASSWORD')
+
+args1 = {"from": 'helloworld12',
+        "to": 'eosio',
+        "quantity": '0.0001 EOS',
+        "memo": 'hello,world'
+}
+action1 = ['eosio.token', 'transfer', args1, {'helloworld12':'active'}]
+
+args2 = {"from": 'helloworld12',
+        "to": 'eosio.token',
+        "quantity": '0.0001 EOS',
+        "memo": 'hello,world'
+}
+action2 = ['eosio.token', 'transfer', args2, {'helloworld12':'active'}]
+
+r = eosapi.push_transactions([[action1, action2]])
 ```
 
 ### eosapi.get_actions
@@ -267,7 +280,14 @@ Returns account's Actions list
 pos and offset mean： Get the "offset" Actions from the first "pos" record
 
 ```python
-eosapi.get_actions(account_name,pos,offset)
+eosapi.get_actions('eosio.token', 0, 1)
+```
+
+```python
+{
+    "actions": [],
+    "last_irreversible_block": 1001186
+}
 ```
 
 ### eosapi.get_transaction
